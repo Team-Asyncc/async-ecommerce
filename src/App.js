@@ -1,15 +1,14 @@
-import './App.scss';
+import "./styles/output.css";
+import "./App.scss";
 
 function App() {
-	return (
-		<div className='App'>
-			<header className='App-header'>
-				<p>
-					<code>Ecommerce Application 🦄</code>
-				</p>
-			</header>
-		</div>
-	);
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>ECOMMERCE WEBSITE</p>
+      </header>
+    </div>
+  );
 }
 
 export default App;
