@@ -1,11 +1,11 @@
-import './App.scss';
-import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Product from './components/Product';
 import Orderpage from './components/OrderPage/Orderpage';
 import Home from './components/Home';
 import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
+import './App.scss';
 
 function App() {
   return (
