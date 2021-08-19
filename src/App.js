@@ -1,5 +1,6 @@
 import "./styles/output.css";
 import "./App.scss";
+import Categories from "./components/Categories/Categories";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         <p>ECOMMERCE WEBSITE</p>
       </header>
+      <Categories />
     </div>
   );
 }
