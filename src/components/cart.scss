@@ -1,0 +1,229 @@
+.shopping-btn{
+    color:white;
+    background-color: rgb(255, 23, 68);
+    padding:10px 12px;
+    margin-left:1%;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.continue-shoppings{
+    border:2px solid black;
+    padding:6px 12px;
+    margin-left:1%;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: fit-content;
+    align-self: center;
+    margin:0 auto;
+    margin-bottom: 4%;
+}
+.cart-item-title, .discounted-price{
+    font-weight: 700;
+}
+.discounted-price{font-weight: 800;}
+.off-span{
+    font-weight: 500;
+    opacity:.8;
+}
+.saved-product-btn{
+    color:rgb(255, 23, 68);
+    padding:8px 10px;
+    border-radius:20px;
+    font-weight: 700;
+    border:2px solid rgb(255, 23, 68);
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+.del-icon{
+    position:relative;
+   width: 37px;
+   top:40%;
+   left:30%;
+}
+.cart-item-container{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.empty-bag{
+    display: inline-block;
+    width: fit-content;
+}
+.cart-btn{
+width:35vw;
+display: flex;
+justify-content: space-around;
+}
+.cart-btn *:hover{
+    transition: all .5s ease ;
+    box-shadow: 0px 9px 9px 0px rgba(0,0,0,0.75);
+}
+.cart-empty-msg{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.cart-nav{
+    font-size: 1.9rem;
+    font-weight: 600;
+    padding:.5% 4%;
+    background-color: white;
+}
+.cart-item{
+    background-color: red;
+    width:50vw;
+    height:45vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin:2vw 2vw;
+    margin-left: 2vw;
+    background-color: #eafbf4;
+    font-size:1.1rem;
+}
+.cart-item, .cart-item * {
+    font-size: 1.2rem;
+}
+.cart-item-image{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.cart-item-image-container{
+    display: inline-block;
+    width: 33vh;
+    height: 33vh;
+    margin: 0 3%;
+    margin-right: 7%;
+}
+.actual-price{
+    margin-left:3%;
+    text-decoration: line-through;
+}
+.CAO{
+    text-align: center;
+    font-size: 1.2rem;
+    color:blue
+}
+.off-info{
+    font-size: 1.2rem;
+    margin-top: .1%;
+    text-align: center;
+}
+.off-highlight{
+    font-weight: 700;
+}
+.wishlist-icon{
+    width: 100%;
+    height: 100%;
+}
+.qnt-wl{
+    display: flex;
+    align-items: center;
+    margin: 2% 0;
+    
+}
+.wishlist-container{
+    width: 40px;
+    margin-left:40%;
+}
+.delivery-icon{
+    margin-right: 2%;
+    width:10%;
+    height:10%;
+}
+.free-tag{
+    color: rgb(3, 119, 3);
+    font-weight: 600;
+}
+.delivery-info{
+    display: flex;
+    align-items: center;
+}
+.devider{
+    display: flex;
+}
+.coupon-container{
+    justify-content: space-around;
+    align-items:center;
+    height:10vh;
+    font-weight: 600;
+    background-color: white;
+    width: 30vw;
+    display: flex;
+    margin:1% auto;
+
+    margin-bottom: 4%;
+    background-color: rgb(241, 181, 241);
+}
+.coupon-container *{
+    font-size: 1.2rem;
+}
+.coupon-icon{
+    width:10%;
+}
+.coupon-input{
+    border:none;
+    width: 30%;
+    border-bottom: 1px solid black;
+}
+.bag-total , .bag-subtotal, .product-discount, .shipping-charge{
+    display: flex;
+    justify-content: space-between;
+}
+.bag-total *, .bag-subtotal *, .product-discount *, .shipping-info, .save-money, .shipping-charge *{
+    margin:1% 3%;
+    font-size: 1.2rem;
+}
+.cart-curr-status{
+    background-color: white;
+    margin-top:3%;
+    margin:0 2vw;
+    height: fit-content;
+    text-align: center;
+    padding:4%;
+    background-color: rgb(253, 253, 202);
+}
+.cart-info{
+    margin:0 auto;
+}
+.cart-item-field{
+    margin:2% 0;
+    height:75vh;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+.cart-item-field::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: rgb(194, 191, 191);
+    border-radius: 18px;
+    width: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+      transition: all 1s ease-in-out ;
+      background:blue;
+    height: 1px;
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+    background: rgb(71, 209, 251); 
+  }
+  .cart-item-info-box{
+      border:1px solid green;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  }
