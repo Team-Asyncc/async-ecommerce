@@ -1,34 +1,23 @@
 import wishlist from '../assets/wishlist.png';
 import deliveryIcon from '../assets/delivery.png';
-import { useState, useEffect } from 'react';
 import couponIcon from '../assets/coupon.png';
 import bagIcon from '../assets/bag.png';
-import delIcon from '../assets/delete.png'
-import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
+import { removeItem, incItem, decItem } from '../redux/slices/Cartslice';
+import delIcon from '../assets/delete.png';
+import { useDispatch, useSelector } from 'react-redux';
 import './cart.scss';
 export default function Cart() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
-
-  const selectedItem = [1, 2, 3];
+  const dispatch = useDispatch();
+  const selectedItem = useSelector((state) => state.cart);
   let totalPrice = 0;
   return (
     <div className="w-screen bg-white-500">
-      <div className="cart-nav">My Bag</div>
       <div>
-        {data.length > 0 ? (
+        {1 > 0 ? (
           <div>
             {selectedItem.length > 0 ? (
               <div>
-                <div className="CAO">
-                  <span>Cart...</span>
-                  <span>Address...</span>
-                  <span>Order...</span>
-                </div>
                 <div className="off-info">
                   Apply coupon <span className="off-highlight">DEVSNEST10</span>{' '}
                   to avail flat <span className="off-highlight">10%</span> off
@@ -37,42 +26,77 @@ export default function Cart() {
                 <div className="devider">
                   <section className="cart-item-field">
                     {selectedItem.map((item, idx) => {
-                      totalPrice += data[item].price * 69;
+                      totalPrice += item.price * (item.quantity + 1);
                       return (
-                        <div className="cart-item">
+                        <div className="cart-item" key={idx}>
                           <div className="cart-item-image-container">
                             <img
                               className="cart-item-image"
-                              src={data[item].image} alt="cartImage"
+                              src={item.img}
+                              alt="cartImage"
                             />
                           </div>
-                            <img className='del-icon' src={delIcon} alt="del-Icon" />
-                          <div className >
-                            <div className="cart-item-title">
-                              {data[item].title}
-                            </div>
+                          <img
+                            className="del-icon"
+                            src={delIcon}
+                            alt="del-Icon"
+                            onClick={() => {
+                              dispatch(removeItem(item.id));
+                              console.log(item.id);
+                            }}
+                          />
+                          <div className>
+                            <div className="cart-item-title">{item.title}</div>
 
                             <div className="cart-item-price">
                               <span className="discounted-price">
-                                {' '}
-                                ₹ {(data[item].price * 69).toFixed(2)}
+                                ₹ {item.price * (item.quantity + 1).toFixed(2)}
                               </span>
 
                               <span className="actual-price">
-                                {(data[item].price * 79).toFixed(2)}
+                                {(
+                                  (item.price / 10 + item.price) *
+                                  (item.quantity + 1)
+                                ).toFixed(2)}
                               </span>
 
                               <span className="off-span"> (10% off) </span>
                               <div className="qnt-wl">
-                              <span><span>
-                                Quantity : <button>+</button>1<button>-</button></span></span>
-                              <div className="wishlist-container">
-                                <img
-                                  className="wishlist-icon"
-                                  src={wishlist}
-                                  alt="wishlist"
-                                />
-                              </div>
+                                <span>
+                                  <span>
+                                    Quantity :{' '}
+                                    <button
+                                      className={
+                                        item.quantity + 1 === 5
+                                          ? 'max inc-btn'
+                                          : 'inc-btn'
+                                      }
+                                      onClick={() => {
+                                        dispatch(incItem(item.id));
+                                      }}
+                                    >
+                                      +
+                                    </button>
+                                    {item.quantity + 1}
+                                    <button
+                                      className={
+                                        item.quantity === 0
+                                          ? 'min dec-btn'
+                                          : 'dec-btn'
+                                      }
+                                      onClick={() => dispatch(decItem(item.id))}
+                                    >
+                                      -
+                                    </button>
+                                  </span>
+                                </span>
+                                <div className="wishlist-container">
+                                  <img
+                                    className="wishlist-icon"
+                                    src={wishlist}
+                                    alt="wishlist"
+                                  />
+                                </div>
                               </div>
                               <div className="delivery-info">
                                 <img
@@ -90,7 +114,7 @@ export default function Cart() {
                         </div>
                       );
                     })}
-                    <div className="continue-shoppings">Continue shopping</div>
+                    <div className="continue-shoppings"><Link to="/products" style={{textDecoration:"none"}}>Continue shopping</Link></div>
                   </section>
                   <section className="cart-info">
                     <div className="coupon-container">
@@ -130,8 +154,8 @@ export default function Cart() {
                         You will save {(totalPrice / 10).toFixed(2)}₹ on this
                         order
                       </div>
-                      <button className="text-white rounded-lg bg-pink-600 h-10 w-96 text-center margin text-xl">
-                        Place your order
+                      <button className="text-white rounded-lg bg-pink-600 h-10 w-96 text-center m-4 text-xl">
+                        <Link to="/placeorder" style={{textDecoration:"none"}}>Place your order</Link>
                       </button>
                     </div>
                   </section>
@@ -145,9 +169,9 @@ export default function Cart() {
                     Your bag is empty! Let’s fill it up shall we?
                   </div>
                   <div className="cart-btn">
-                    <button className="shopping-btn">Continue shopping</button>
+                    <button className="shopping-btn"><Link to="/product"style={{textDecoration:"none"}} >Continue shopping</Link> </button>
                     <button className="saved-product-btn">
-                      View saved Products
+                      <Link to="/whishlist" style={{textDecoration:"none"}}>View saved products</Link>
                     </button>
                   </div>
                 </div>
