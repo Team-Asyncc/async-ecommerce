@@ -81,9 +81,9 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map((item,idx) => (
                 <a
-                  key={item.name}
+                  key={idx}
                   href={item.href}
                   className={classNames(
                     item.current
