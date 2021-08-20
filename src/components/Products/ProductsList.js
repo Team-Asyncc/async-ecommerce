@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/slices/productSlice';
 import Loading from '../Loading';
 
-import { Link } from 'react-router-dom';
 import Card from './Card';
 
 const category = ['kids war', 'mes war', 'electronics', 'chill'];
