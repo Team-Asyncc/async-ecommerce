@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import couponIcon from '../assets/coupon.png';
 import bagIcon from '../assets/bag.png';
 import delIcon from '../assets/delete.png'
-import { useSelector } from 'react-redux';
 import './cart.scss';
 export default function Cart() {
   const [data, setData] = useState([]);

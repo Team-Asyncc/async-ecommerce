@@ -6,12 +6,14 @@ import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
 import ProductsList from './components/Products/ProductsList';
 import './App.scss';
+import CustomSlider from './components/Carousel/CustomSlider';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
+        <CustomSlider />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Product" component={ProductsList} />
