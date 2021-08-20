@@ -1,14 +1,25 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Product from './components/Product';
+import Orderpage from './components/OrderPage/Orderpage';
+import Home from './components/Home';
+import Wishlist from './components/Wishlist';
+import Cart from './components/Cart';
 import './App.scss';
-import Categories from './components/Categories/Categories';
-// import Loading from './components/Loading';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p className="bg-red-300 p-3 rounded">ECOMMERCE WEBSITE</p>
-      </header>
-      <Categories />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Product" component={Product} />
+          <Route exact path="/Orders" component={Orderpage} />
+          <Route exact path="/Cart" component={Cart} />
+          <Route exact path="/Wishlist" component={Wishlist} />
+        </Switch>
+      </Router>
     </div>
   );
 }
