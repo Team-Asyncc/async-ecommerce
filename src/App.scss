@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+
 body {
   &::-webkit-scrollbar {
     width: 8px;
@@ -29,7 +31,7 @@ body {
 }
 
 .categories-electronics {
-  background: url(./images/categories-electronics.jpg) no-repeat center
+  background: url(./images/categories-electronics.jfif) no-repeat center
     center/cover;
 }
 
@@ -42,6 +44,27 @@ body {
   background: url(./images/categories-womens-clothing.jpg) no-repeat center
     center/cover;
 }
-.categories-jewellery {
-  background: url(./images/categories-jewellery.jpg) no-repeat top center/cover;
+
+.categories-kids-wear {
+  background: url(./images/categories-kids-wear.jpg) no-repeat center
+    center/cover;
+}
+
+.categories-footwear {
+  background: url(./images/categories-footwear.jpg) no-repeat top center/cover;
+}
+
+.categories-accessories {
+  background: url(./images/categories-accessories.jpg) no-repeat center
+    center/cover;
+}
+
+.categories-home-decor {
+  background: url(./images/categories-home-decor.jpg) no-repeat center
+    center/cover;
+}
+
+.categories-cosmetics {
+  background: url(./images/categories-cosmetics.jpg) no-repeat center
+    center/cover;
 }
