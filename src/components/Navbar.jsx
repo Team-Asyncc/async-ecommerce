@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
-import { CartIcon, FavIcon } from './icons/navIcon';
+import { AsyncIcon, CartIcon, FavIcon } from './icons/navIcon';
 const navigation = [
   { name: 'Product', current: true },
   { name: 'Categories', current: false },
@@ -33,23 +33,14 @@ export default function Navbar() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link to="/">
-                    <img
-                      src="https://img.icons8.com/office/80/000000/online-store.png"
-                      alt="store-name"
-                      className="block lg:hidden h-8 w-auto"
-                    />
-                    <img
-                      src="https://img.icons8.com/office/80/000000/online-store.png"
-                      alt="store-name"
-                      className="hidden lg:block h-8 w-auto"
-                    />
+                    <AsyncIcon className="hidden lg:block" />
                   </Link>
                   {/*
                         Logo
                     className= */}
                 </div>
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                <div className="hidden lg:flex  sm:flex sm:ml-6">
+                  <div className="flex space-x-4 items-center justify-center">
                     {navigation.map((item) => (
                       <Link to={`/${item.name}`}>
                         <span
@@ -70,26 +61,20 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className=" p-1 mr-3 rounded-full text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <Link to="/Cart">
-                    <span className="sr-only">View notifications</span>
-                    {/* Cart Icon */}
-                    <CartIcon />
-                  </Link>
-                </button>
-                <button
-                  type="button"
+                {/* Fav Icon */}
+                <Link
+                  to="/Wishlist"
                   className=" p-1 rounded-full text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  <span className="sr-only">View notifications</span>
-                  {/* Fav Icon */}
-                  <Link to="/Wishlist">
-                    <FavIcon />
-                  </Link>
-                </button>
+                  <FavIcon />
+                </Link>
+                <Link
+                  to="/Cart"
+                  className=" p-1 rounded-full text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                >
+                  {/* Cart Icon */}
+                  <CartIcon />
+                </Link>
               </div>
             </div>
           </div>
