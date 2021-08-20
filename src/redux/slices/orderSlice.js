@@ -1,16 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-const initialState = {
-  orders: [],
-};
+import { storeOrders } from '../../services/orders';
+
 export const orderSlice = createSlice({
   name: 'orders',
-  initialState,
+  initialState: [],
   reducers: {
     getAllorders: (state, action) => {
-      state.orders = [...action.payload];
+      return [...action.payload];
     },
     addOrder: (state, action) => {
-      state.orders = [...state.orders, action.payload];
+      const newState = [...state, action.payload];
+      storeOrders(newState);
+      return newState;
     },
   },
 });

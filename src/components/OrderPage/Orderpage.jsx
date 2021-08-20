@@ -1,27 +1,20 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllorders } from '../../redux/slices/orderSlice';
+import { loadOrders } from '../../services/orders';
 import EmptyOrder from './EmptyOrder';
 import OrderItem from './OrderItem';
-const item = {
-  id: 1,
-  title: 'Full Sleeves Tee',
-  description:
-    '18 to 24 Months, Navy Blue round neck tee with back button and sequinned rainbow detailing',
-  price: 400,
-  img: 'https://cdn.fcglcdn.com/brainbees/images/products/438x531/8615268a.webp',
-  type: ['top', 'shirt', 'kids', 'girls', 'boys'],
-  category: "kids' wear",
-  inCart: false,
-  quantity: 0,
-  rating: 3,
-};
+
 const Orderpage = () => {
-  const empty = false;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllorders(loadOrders()));
+  }, [dispatch]);
   const orders = useSelector((state) => state.orders);
   console.log(orders);
   return (
     <>
-      {empty ? (
+      {orders.length === 0 ? (
         <EmptyOrder />
       ) : (
         <div className="flex justify-center pt-3">
@@ -30,7 +23,9 @@ const Orderpage = () => {
               Showing All Order
             </div>
             <div className="w-full p-2 bg-gray-200">
-              <OrderItem item={item} />
+              {orders.map((item, idx) => {
+                return <OrderItem item={item} key={idx} />;
+              })}
             </div>
           </div>
         </div>
