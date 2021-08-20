@@ -41,8 +41,8 @@ export default function Navbar() {
                 </div>
                 <div className="hidden lg:flex  sm:flex sm:ml-6">
                   <div className="flex space-x-4 items-center justify-center">
-                    {navigation.map((item) => (
-                      <Link to={`/${item.name}`}>
+                    {navigation.map((item,idx) => (
+                      <Link to={`/${item.name}`} key={idx}>
                         <span
                           key={item.name}
                           className={classNames(
