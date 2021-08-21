@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import emptyOrder from '../../images/order-images/emptyOrder.svg';
 
 const EmptyOrder = () => {
@@ -14,9 +15,11 @@ const EmptyOrder = () => {
           here!
         </div>
       </div>
-      <button className="h-14 w-96 bg-pink-500 rounded-lg text-center text-2xl font-medium text-white ">
-        Start Shopping
-      </button>
+      <Link to="/Product">
+        <button className="h-14 w-96 bg-pink-500 rounded-lg text-center text-2xl font-medium text-white ">
+          Start Shopping
+        </button>
+      </Link>
     </div>
   );
 };
