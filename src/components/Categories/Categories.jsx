@@ -5,7 +5,7 @@ const Categories = () => {
   return (
     <div className="categories">
       <div className="text-4xl mb-10 ml-8 font-extrabold">CATEGORIES</div>
-      <div className="bg-gradient-to-r from-pink-100 to-blue-100 bg-opacity-20 min-h-96 w-full rounded-xl grid grid-cols-1 sm:grid-cols-2  lgCustom:grid-cols-4 p-3">
+      <div className="bg-gradient-to-tr from-pink-100 to-blue-100 bg-opacity-20 min-h-96 w-full rounded-xl grid grid-cols-1 sm:grid-cols-2  lgCustom:grid-cols-4 p-3">
         <CategoryCard
           class_name="categories-mens-clothing"
           category_type="Men's Clothing"

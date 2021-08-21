@@ -31,7 +31,7 @@ const ProductsList = () => {
       </div>
       <div className="mx-auto flex flex-wrap w-5/6">
         {products.map((val, idx) => {
-          return <Card val={val} key={idx} />;
+          return <Card val={val} />;
         })}
       </div>
     </section>
