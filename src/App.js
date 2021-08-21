@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Orderpage from './components/OrderPage/Orderpage';
 import Home from './components/Home';
-import Wishlist from './components/Wishlist';
+import Wishlist from './components/Wishlist/Wishlist';
 import Cart from './components/Cart';
 import ProductsList from './components/Products/ProductsList';
 import './App.scss';

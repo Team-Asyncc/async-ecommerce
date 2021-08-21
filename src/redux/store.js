@@ -8,8 +8,8 @@ const store = configureStore({
   reducer: {
     orders: ordersReducer,
     products: productSlice,
-    cart : cartSlice,
-    whishlist: whishlistSlice,
+    cart: cartSlice,
+    wishlist: whishlistSlice,
   },
 });
 

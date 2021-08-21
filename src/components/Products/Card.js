@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import '../../styles/productList.scss';
 
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { addToWhishlist } from '../../redux/slices/whishlistSlice';
 
 const Card = ({ val }) => {
   const [visible, setVisible] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <div className="m-4 relative overflow-hidden hover:shadow-sm">
@@ -46,6 +49,7 @@ const Card = ({ val }) => {
             toast.success('Item added to whishlist', {
               icon: '👏',
             });
+            dispatch(addToWhishlist(val));
           }}
         >
           Wishlist
