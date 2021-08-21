@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Categories from './Categories/Categories';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadProducts } from '../redux/slices/productSlice';
+import AddAddressPage from './AddAddressPage/AddAddressPage';
 
 // import { getAllProducts, getSpecificProduct } from '../services/products';
 
@@ -21,6 +22,7 @@ const Home = () => {
         <p className="bg-red-300 p-3 rounded">ECOMMERCE WEBSITE</p>
       </header>
       <Categories />
+      <AddAddressPage />
     </div>
   );
 };
