@@ -10,7 +10,7 @@ const Card = ({ val }) => {
 
   return (
     <div className="m-4 relative overflow-hidden hover:shadow-sm">
-      <Link to={`/${val.id}`}>
+      <Link to={`/Product/${val.id}`}>
         <div
           className="w-56"
           onMouseEnter={() => setVisible(true)}
