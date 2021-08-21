@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const whishlistSlice = createSlice({
   name: 'whishlistSlice',
-  initialState: [],
+  initialState: [{}],
   reducers: {
     addToWhishlist: (state, action) => {
       state = [...state, action.payload];
