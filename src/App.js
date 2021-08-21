@@ -8,7 +8,6 @@ import ProductsList from './components/Products/ProductsList';
 import './App.scss';
 import ToastContainer from './components/ToastContainer';
 import ProductDetails from './components/ProductDetails/ProductDetails';
-import AddAddressPage from './components/AddAddressPage/AddAddressPage';
 import AddressPage from './components/AddressPage/AddressPage';
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
           <Route exact path="/Cart" component={Cart} />
           <Route exact path="/Wishlist" component={Wishlist} />
           <Route exact path="/address" component={AddressPage} />
-          <Route exact path="/addaddress" component={AddAddressPage} />
         </Switch>
       </Router>
     </div>

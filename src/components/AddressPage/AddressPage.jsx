@@ -1,30 +1,41 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AddressCard from './AddressCard';
+import AddressForm from './AddressForm';
+
+import Modal from 'react-modal';
+import { setSelected } from '../../redux/slices/addressSlice';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+Modal.setAppElement(document.getElementById('root'));
 
 const AddressPage = () => {
-  const availableAddress = [
-    {
-      name: ' Product',
-      address: ' 28 Avenue, King street, Orgeon',
-      contact: '+1 2665442318 ',
-    },
-    {
-      name: ' Product',
-      address: ' 28 Avenue, King street, Orgeon',
-      contact: '+1 2665442318 ',
-    },
-    {
-      name: ' Product',
-      address: ' 28 Avenue, King street, Orgeon',
-      contact: '+1 2665442318 ',
-    },
-    {
-      name: ' Product',
-      address: ' 28 Avenue, King street, Orgeon',
-      contact: '+1 2665442318 ',
-    },
-  ];
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+  const availableAddress = useSelector((s) => s.addressData.storedAddresses);
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const numberOfCartItems = cart.length;
   let totalPrice = 0;
@@ -36,6 +47,19 @@ const AddressPage = () => {
       className="flex  justify-center w-full"
       style={{ height: 'calc(100vh - 64px)' }}
     >
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <button onClick={closeModal} className="">
+          close
+        </button>
+        <AddressForm setIsOpen={setIsOpen} />
+      </Modal>
+
       <div className=" w-10/12">
         <div className="text-2xl w-6/12 font-bold mt-3 px-12">
           Select Delivery Address
@@ -43,14 +67,32 @@ const AddressPage = () => {
 
         <div className="flex flex-col justify-center p-3 h-5/6 sm:flex-row">
           <div className="w-10/12 h-auto px-4 space-y-6 sm:w-7/12">
-            <div className="h-5/6 p-3 rounded-lg overflow-y-scroll space-y-2 custom-scroll">
-              {availableAddress.length === 0
-                ? null
-                : availableAddress.map((storedAddress) => {
-                    return <AddressCard storedAddress={storedAddress} />;
-                  })}
-            </div>
-            <button className="ml-3 font-bold  bg-gradient-to-r from-pink-200 to-blue-200 p-2 rounded-md text-md px-5 border-2 border-gray-700 ">
+            {availableAddress.length === 0 ? (
+              <div className="h-24 bg-white rounded-lg text-xl font-normal p-6">
+                Nothing here...
+              </div>
+            ) : (
+              <div className="h-5/6 p-3 rounded-lg overflow-y-scroll space-y-2 custom-scroll">
+                {availableAddress.map((storedAddress, idx) => {
+                  return (
+                    <AddressCard
+                      storedAddress={storedAddress}
+                      idx={idx}
+                      key={idx}
+                      openModal={openModal}
+                    />
+                  );
+                })}
+              </div>
+            )}
+            <button
+              onClick={() => {
+                dispatch(setSelected([]));
+
+                openModal();
+              }}
+              className="ml-3 font-bold  bg-gradient-to-r from-pink-200 to-blue-200 p-2 rounded-md text-md px-5 border-2 border-gray-700 "
+            >
               ADD NEW ADDRESS
             </button>
           </div>
@@ -78,7 +120,7 @@ const AddressPage = () => {
               </div>
               <div className="font-medium  flex justify-between border-t-2 border-gray-400 pt-5">
                 <span className="inline-block">TOTAL AMOUNT:</span>{' '}
-                {(totalPrice / 10).toFixed(2)}₹
+                {(totalPrice - totalPrice / 10).toFixed(2)}₹
               </div>
               <button className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 ">
                 ADD TO ORDER
