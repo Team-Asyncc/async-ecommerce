@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'infinite-react-carousel';
 
 const settings = {
-  arrows: false,
+  arrows: true,
   autoplay: true,
   centerMode: true,
   centerPadding: 40,
@@ -23,7 +23,7 @@ const CustomSlider = () => {
           <img
             src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/8/17/d7f67601-9c65-4556-8e8d-cf2417d261fa1629208024245-Dresses_Dk.jpg"
             alt="slide-img"
-            srcset=""
+          
           />
         </div>
         <div>
