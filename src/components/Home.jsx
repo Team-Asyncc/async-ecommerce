@@ -3,6 +3,7 @@ import Categories from './Categories/Categories';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadProducts } from '../redux/slices/productSlice';
 import AddAddressPage from './AddAddressPage/AddAddressPage';
+import ItemsDisplay from './LandingPageItems/LandingPageItems';
 
 // import { getAllProducts, getSpecificProduct } from '../services/products';
 
@@ -22,7 +23,10 @@ const Home = () => {
         <p className="bg-red-300 p-3 rounded">ECOMMERCE WEBSITE</p>
       </header>
       <Categories />
+      <ItemsDisplay/>
       <AddAddressPage />
+      
+      
     </div>
   );
 };
