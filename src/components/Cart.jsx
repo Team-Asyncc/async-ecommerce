@@ -1,8 +1,7 @@
-import wishlist from '../assets/wishlist.png';
 import deliveryIcon from '../assets/delivery.png';
 import couponIcon from '../assets/coupon.png';
 import bagIcon from '../assets/bag.png';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { removeItem, incItem, decItem } from '../redux/slices/Cartslice';
 import delIcon from '../assets/delete.png';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +11,7 @@ export default function Cart() {
   const selectedItem = useSelector((state) => state.cart);
   let totalPrice = 0;
   return (
-    <div className="w-screen bg-white-500">
+    <div className="w-screen bg-white-100 cart-main-container">
       <div>
         {1 > 0 ? (
           <div>
@@ -36,18 +35,25 @@ export default function Cart() {
                               alt="cartImage"
                             />
                           </div>
-                          <img
-                            className="del-icon"
-                            src={delIcon}
-                            alt="del-Icon"
-                            onClick={() => {
-                              dispatch(removeItem(item.id));
-                              console.log(item.id);
-                            }}
-                          />
-                          <div className>
-                            <div className="cart-item-title">{item.title}</div>
 
+                          <div className>
+                            <div className="price-del">
+                              <div className="cart-item-title">
+                                {item.title}
+                              </div>
+                              <img
+                                className="del-icon"
+                                src={delIcon}
+                                alt="del-Icon"
+                                onClick={() => {
+                                  dispatch(removeItem(item.id));
+                                  console.log(item.id);
+                                }}
+                              />
+                            </div>
+                            <div className="wishlist-container">
+                              {item.description.slice(0, 75)}
+                            </div>
                             <div className="cart-item-price">
                               <span className="discounted-price">
                                 ₹ {item.price * (item.quantity + 1).toFixed(2)}
@@ -61,10 +67,11 @@ export default function Cart() {
                               </span>
 
                               <span className="off-span"> (10% off) </span>
+
                               <div className="qnt-wl">
                                 <span>
                                   <span>
-                                    Quantity :{' '}
+                                    QUANTITY :{' '}
                                     <button
                                       className={
                                         item.quantity + 1 === 5
@@ -90,14 +97,8 @@ export default function Cart() {
                                     </button>
                                   </span>
                                 </span>
-                                <div className="wishlist-container">
-                                  <img
-                                    className="wishlist-icon"
-                                    src={wishlist}
-                                    alt="wishlist"
-                                  />
-                                </div>
                               </div>
+
                               <div className="delivery-info">
                                 <img
                                   src={deliveryIcon}
@@ -114,10 +115,14 @@ export default function Cart() {
                         </div>
                       );
                     })}
-                    <div className="continue-shoppings"><Link to="/products" style={{textDecoration:"none"}}>Continue shopping</Link></div>
+                    <div className="continue-shoppings">
+                      <Link to="/products" style={{ textDecoration: 'none' }}>
+                        Continue shopping
+                      </Link>
+                    </div>
                   </section>
                   <section className="cart-info">
-                    <div className="coupon-container">
+                    <div className="coupon-container rounded-lg">
                       <img
                         src={couponIcon}
                         alt="coupun"
@@ -134,28 +139,36 @@ export default function Cart() {
                         Congratualtions !! your order is eligible for
                         <span className="free-tag"> FREE </span> shipping!
                       </div>
-                      <div className="bag-total">
-                        <span>Bag total</span>
-                        <span>{totalPrice.toFixed(2)}</span>
+
+                      <div className="bag-subtotal">
+                        <span>Bag subtotal</span>
+                        <span>{totalPrice.toFixed(2)}₹</span>
                       </div>
                       <div className="shipping-charge">
                         <span>Shipping charge</span>
                         <span className="free-tag">FREE</span>
                       </div>
-                      <div className="bag-subtotal">
-                        <span>Bag subtotal</span>
-                        <span>{totalPrice.toFixed(2)}₹</span>
-                      </div>
                       <div className="product-discount">
-                        <span>Product Discount(s)</span>
-                        <span>-{(totalPrice / 10).toFixed(2)}₹</span>
+                        <span>Discount MRP</span>
+                        <span className="free-tag">
+                          -{(totalPrice / 10).toFixed(2)}₹
+                        </span>
+                      </div>
+                      <div className="bag-total">
+                        <span>Total MRP</span>
+                        <span>{totalPrice.toFixed(2)}</span>
                       </div>
                       <div className="save-money">
                         You will save {(totalPrice / 10).toFixed(2)}₹ on this
                         order
                       </div>
-                      <button className="text-white rounded-lg bg-pink-600 h-10 w-96 text-center m-4 text-xl">
-                        <Link to="/placeorder" style={{textDecoration:"none"}}>Place your order</Link>
+                      <button className="text-white rounded-lg bg-pink-600 h-10  text-center mt-4 text-xl place-order">
+                        <Link
+                          to="/placeorder"
+                          style={{ textDecoration: 'none' }}
+                        >
+                          Place your order
+                        </Link>
                       </button>
                     </div>
                   </section>
@@ -169,9 +182,15 @@ export default function Cart() {
                     Your bag is empty! Let’s fill it up shall we?
                   </div>
                   <div className="cart-btn">
-                    <button className="shopping-btn"><Link to="/product"style={{textDecoration:"none"}} >Continue shopping</Link> </button>
+                    <button className="shopping-btn">
+                      <Link to="/product" style={{ textDecoration: 'none' }}>
+                        Continue shopping
+                      </Link>{' '}
+                    </button>
                     <button className="saved-product-btn">
-                      <Link to="/whishlist" style={{textDecoration:"none"}}>View saved products</Link>
+                      <Link to="/whishlist" style={{ textDecoration: 'none' }}>
+                        View saved products
+                      </Link>
                     </button>
                   </div>
                 </div>
