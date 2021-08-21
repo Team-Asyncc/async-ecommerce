@@ -2,16 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const whishlistSlice = createSlice({
   name: 'whishlistSlice',
-  initialState: [{}],
+  initialState: [],
   reducers: {
     addToWhishlist: (state, action) => {
-      state = [...state, action.payload];
+      return [...state, action.payload];
     },
-    removeFromWhishlist: (state, action) => {
-      state = state.filter((val) => val.id !== action.payload);
-    },
+    removeFromWhishlist: (state, action) =>
+      state.filter((item) => {
+        console.log(item.id, action.payload);
+        return item.id !== action.payload;
+      }),
     clearWhishlist: (state) => {
-      state = [];
+      return [];
     },
   },
 });

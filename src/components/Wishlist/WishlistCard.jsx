@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../../images/categories-womens-clothing.jpg';
 import HighlightOffRoundedIcon from '@material-ui/icons/HighlightOffRounded';
 import { useDispatch } from 'react-redux';
 import { removeFromWhishlist } from '../../redux/slices/whishlistSlice';
@@ -8,15 +7,19 @@ import { addItem } from '../../redux/slices/Cartslice';
 const WishlistCard = ({ productObj }) => {
   const dispatch = useDispatch();
   return (
-    <div className="m-4 relative overflow-hidden hover:shadow-xl">
+    <div className="m-4 relative overflow-hidden shadow-md bg-gray-100 hover:shadow-xl hover:bg-white">
       <div className="w-60">
-        <div className="w-60 h-64 overflow-hidden relative cursor-pointer">
+        <div className="w-60 h-64 overflow-hidden relative cursor-pointer ">
           <HighlightOffRoundedIcon
             className="absolute left-52 top-2 cursor-pointer"
             color="action"
             onClick={() => dispatch(removeFromWhishlist(productObj.id))}
           />
-          <img className="object-scale-down" src={productObj.img} />
+          <img
+            className="object-scale-down"
+            alt="Product"
+            src={productObj.img}
+          />
         </div>
         <div className="px-3 pb-6 py-4 border relative">
           <div className="leading-3">
