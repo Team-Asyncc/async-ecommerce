@@ -7,6 +7,9 @@ module.exports = {
         lgCustom: '1100px',
         xlCustom: '1340px',
       },
+      outline: {
+        pink: '2px solid #f9a8d400',
+      },
     },
   },
   variants: {
