@@ -10,7 +10,7 @@ const store = configureStore({
     orders: ordersReducer,
     products: productSlice,
     cart: cartSlice,
-    whishlist: whishlistSlice,
+    wishlist: whishlistSlice,
     addressData: addressSlice,
   },
 });

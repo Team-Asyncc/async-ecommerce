@@ -3,8 +3,7 @@ import { useDispatch } from 'react-redux';
 import { removeAddress, setSelected } from '../../redux/slices/addressSlice';
 
 const AddressCard = ({ storedAddress, idx, openModal }) => {
-  console.log('from here', storedAddress, idx);
-  const { name, address1, address2, contact, pincode, state, district } =
+  const { name, address1, address2, pincode, state, district, mobileno } =
     storedAddress;
   const dispatch = useDispatch();
 
@@ -12,7 +11,7 @@ const AddressCard = ({ storedAddress, idx, openModal }) => {
     <div className="p-6 bg-gray-200 space-y-3 rounded-lg">
       <div className="font-semibold">{`Name: ${name}`}</div>
       <div className="font-normal">{`Address: ${address1} ${address2} ${pincode} ${district} ${state}`}</div>
-      <div className="font-normal">{`Contact Details: ${contact}`}</div>
+      <div className="font-normal">{`Contact Details: ${mobileno}`}</div>
       <div className="space-x-4">
         <button
           className="px-3 py-1 bg-green-200 rounded border-2 border-white"

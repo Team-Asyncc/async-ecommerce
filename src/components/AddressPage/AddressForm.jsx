@@ -15,7 +15,7 @@ const AddressForm = ({ setIsOpen }) => {
     selectedAddress.length !== 0
       ? {
           name: selectedAddress.val.name,
-          mobileno: selectedAddress.val.contact,
+          mobileno: selectedAddress.val.mobileno,
           address1: selectedAddress.val.address1,
           address2: selectedAddress.val.address2,
           pincode: selectedAddress.val.pincode,
@@ -55,7 +55,7 @@ const AddressForm = ({ setIsOpen }) => {
           placeholder="MOBILE NUMBER"
           className="px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
           onChange={(e) => {
-            setInputs((s) => ({ ...s, mobile: e.target.value }));
+            setInputs((s) => ({ ...s, mobileno: e.target.value }));
           }}
         />
       </div>
@@ -111,7 +111,7 @@ const AddressForm = ({ setIsOpen }) => {
         onClick={() => {
           const data = {
             name: inputs.name,
-            contact: inputs.mobileno,
+            mobileno: inputs.mobileno,
             address1: inputs.address1,
             address2: inputs.address2,
             pincode: inputs.pincode,
