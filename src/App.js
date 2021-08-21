@@ -6,12 +6,14 @@ import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
 import ProductsList from './components/Products/ProductsList';
 import './App.scss';
+import ToastContainer from './components/ToastContainer';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
+        <ToastContainer />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Product" component={ProductsList} />
