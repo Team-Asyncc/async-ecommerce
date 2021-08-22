@@ -35,11 +35,11 @@ const Orderpage = () => {
             </div>
             {showAllOrders ? null : (
               <button
-                className="w-11/12 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "
+                className="w-1/4 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "
                 style={{ padding: '0.3rem 0' }}
                 onClick={() => setShowAllOrders((s) => true)}
               >
-                SHOW MY OLDER ORDERS
+                VIEW MORE
               </button>
             )}
             <div className="text-lg font-normal text-gray-700 text-center">

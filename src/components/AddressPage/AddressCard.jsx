@@ -26,7 +26,7 @@ const AddressCard = ({ storedAddress, idx, openModal }) => {
       </div>
       <div className="space-x-4">
         <button
-          className="px-3 py-1 text-sm font-medium rounded border-2 border-green-200 text-green-400"
+          className="px-3 py-1 text-sm font-normal rounded bg-pink-500 border-2 border-pink-500 text-gray-100 tracking-wide hover:bg-pink-600 hover:border-pink-600"
           onClick={() => {
             const d = { val: storedAddress, id: idx };
             dispatch(setSelected(d));
@@ -36,7 +36,7 @@ const AddressCard = ({ storedAddress, idx, openModal }) => {
           EDIT
         </button>
         <button
-          className="px-3 py-1 text-sm font-medium rounded border-2 border-gray-500 text-gray-800"
+          className="px-3 py-1 text-sm font-medium rounded border-2 border-pink-400 text-pink-500 hover:bg-pink-500 hover:text-gray-100 hover:border-pink-500"
           onClick={() => dispatch(removeAddress(idx))}
         >
           REMOVE
