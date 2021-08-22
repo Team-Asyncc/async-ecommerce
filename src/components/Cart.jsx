@@ -1,6 +1,6 @@
 import deliveryIcon from '../assets/delivery.png';
 import couponIcon from '../assets/coupon.png';
-import bagIcon from '../assets/bag.png';
+import bagIcon from '../assets/uempty_cart.svg';
 import { Link } from 'react-router-dom';
 import { removeItem, incItem, decItem } from '../redux/slices/Cartslice';
 import delIcon from '../assets/delete.png';
@@ -36,7 +36,7 @@ export default function Cart() {
                             />
                           </div>
 
-                          <div className>
+                          <div>
                             <div className="price-del">
                               <div className="cart-item-title">
                                 {item.title}
@@ -174,22 +174,18 @@ export default function Cart() {
             ) : (
               <div>
                 <div className="cart-item-container flex justify-around items-around flex-col ">
-                  <img
-                    src={bagIcon}
-                    alt="EmptyBag"
-                    className="empty-bag w-1/5"
-                  />
-                  <div className="cart-empty-msg">
+                  <img src={bagIcon} alt="EmptyBag" className="h-80 w-auto " />
+                  <div className="text-2xl">
                     Your bag is empty! Let’s fill it up shall we?
                   </div>
-                  <div className="cart-btn">
-                    <button className="shopping-btn">
+                  <div className="space-x-4">
+                    <button className="h-14  bg-red-500 rounded-3xl text-center text-xl font-medium text-white border-2 border-gray-300 px-4 hover:text-red-500 hover:bg-white hover:border-red-500 ">
                       <Link to="/product" style={{ textDecoration: 'none' }}>
                         Continue shopping
-                      </Link>{' '}
+                      </Link>
                     </button>
-                    <button className="saved-product-btn">
-                      <Link to="/whishlist" style={{ textDecoration: 'none' }}>
+                    <button className="h-14  bg-white rounded-3xl text-center text-xl font-medium text-pink-500 border-2 border-pink-500 px-4 hover:text-white hover:bg-pink-400 hover:border-gray-400 ">
+                      <Link to="/Wishlist" style={{ textDecoration: 'none' }}>
                         View saved products
                       </Link>
                     </button>
