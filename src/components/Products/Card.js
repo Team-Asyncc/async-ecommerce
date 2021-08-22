@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/productList.scss';
 
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { addToWhishlist } from '../../redux/slices/whishlistSlice';
 
@@ -46,9 +46,6 @@ const Card = ({ val }) => {
         <span
           className={`w-full inline-block border text-center cursor-pointer py-1 font-medium hover:border-pink-300 `}
           onClick={(e) => {
-            toast.success('Item added to whishlist', {
-              icon: '👏',
-            });
             dispatch(addToWhishlist(val));
           }}
         >
