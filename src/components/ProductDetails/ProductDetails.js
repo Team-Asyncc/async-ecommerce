@@ -41,16 +41,16 @@ const ProductDetails = () => {
           <p className="font-normal text-gray-500">
             {currentProduct.description}
           </p>
-          <span className="border px-3 py-1 mt-4 inline-block">
+          <span className="border px-3 py-1 mt-4 inline-flex items-center">
             <span className="text-lg mr-2">{currentProduct.rating}</span>
             <Star className="text-pink-500 text-lg mr-2" />
             <span className="border-l-2 pl-2 text-gray-500">520 ratings</span>
           </span>
         </div>
         <div className="w-4/5 mt-4 flex">
-          <h1 className="text-xl mr-3">Rs. {2 * currentProduct.price}</h1>
+          <h1 className="text-xl mr-3">₹ {currentProduct.price}</h1>
           <span className="text-lg line-through text-gray-500">
-            RS.{currentProduct.price}{' '}
+            ₹{2 * currentProduct.price}{' '}
           </span>
           <span className="text-lg text-pink-500 ml-3"> (50% OFF) </span>
         </div>
@@ -112,6 +112,7 @@ const ProductDetails = () => {
               }}
             >
               ADD TO WISHLIST
+
             </button>
           </div>
         </div>

@@ -176,6 +176,7 @@ export default function Cart() {
                 </div>
               </div>
             ) : (
+
               <div>
                 <div className="cart-item-container flex justify-around items-around flex-col ">
                   <img src={bagIcon} alt="EmptyBag" className="h-80 w-auto " />
@@ -195,6 +196,7 @@ export default function Cart() {
                       </button>
                     </Link>
                   </div>
+
                 </div>
               </div>
             )}
