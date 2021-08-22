@@ -36,12 +36,14 @@ const AddressForm = ({ setIsOpen }) => {
     <form
       className="address-form  w-11/12 flex flex-col  px-6 py-10 bg-blue-100 rounded-lg "
       onSubmit={(e) => {
+        setIsOpen(false);
         e.preventDefault();
       }}
     >
       <div className="flex flex-col mb-14">
         <input
           type="text"
+          required
           placeholder="NAME"
           defaultValue={inputs.name}
           className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -51,6 +53,7 @@ const AddressForm = ({ setIsOpen }) => {
         />
         <input
           type="tel"
+          required
           defaultValue={inputs.mobileno}
           placeholder="MOBILE NUMBER"
           className="px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -61,6 +64,7 @@ const AddressForm = ({ setIsOpen }) => {
       </div>
       <input
         type="text"
+        required
         defaultValue={inputs.address1}
         placeholder="ADDESS LINE 1"
         className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -70,6 +74,7 @@ const AddressForm = ({ setIsOpen }) => {
       />
       <input
         type="text"
+        required
         defaultValue={inputs.address2}
         placeholder="ADRESS LINE 2"
         className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -80,6 +85,7 @@ const AddressForm = ({ setIsOpen }) => {
 
       <input
         type="text"
+        required
         defaultValue={inputs.pincode}
         placeholder="PINCODE"
         className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -90,6 +96,7 @@ const AddressForm = ({ setIsOpen }) => {
       <div className="flex flex-wrap justify-between">
         <input
           type="text"
+          required
           defaultValue={inputs.state}
           placeholder="STATE"
           className="w-5/12 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -99,6 +106,7 @@ const AddressForm = ({ setIsOpen }) => {
         />
         <input
           type="text"
+          required
           defaultValue={inputs.district}
           placeholder="DISTRICT"
           className="w-5/12 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
@@ -121,7 +129,7 @@ const AddressForm = ({ setIsOpen }) => {
           selectedAddress.length !== 0
             ? dispatch(updateAddress({ id: selectedAddress.id, val: data }))
             : dispatch(addAddress(data));
-          setIsOpen(false);
+          // setIsOpen(false);
           dispatch(setSelected([]));
         }}
         className="mt-4 border-pink-300 border-4 p-1 tracking-widest text-3xl font-semibold text-pink-500"

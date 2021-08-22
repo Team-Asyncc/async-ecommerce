@@ -48,9 +48,11 @@ const ProductDetails = () => {
           </span>
         </div>
         <div className="w-4/5 mt-4 flex">
-          <h1 className="text-xl mr-3">Rs. {currentProduct.price}</h1>
-          <span className="text-lg line-through text-gray-500">RS. 999</span>
-          <span className="text-lg text-pink-500 ml-3"> (60% OFF) </span>
+          <h1 className="text-xl mr-3">Rs. {2 * currentProduct.price}</h1>
+          <span className="text-lg line-through text-gray-500">
+            RS.{currentProduct.price}{' '}
+          </span>
+          <span className="text-lg text-pink-500 ml-3"> (50% OFF) </span>
         </div>
 
         <div className="mt-4 w-4/5">

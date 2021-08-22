@@ -12,7 +12,8 @@ const Orderpage = () => {
     dispatch(getAllorders(loadOrders()));
     // setShowAllOrders(false);
   }, [dispatch]);
-  const orders = useSelector((state) => state.orders);
+  const orderData = useSelector((state) => state.orders);
+  const orders = [...orderData].reverse();
   return (
     <>
       {orders.length === 0 ? (
