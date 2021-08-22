@@ -179,14 +179,14 @@ export default function Cart() {
                     Your bag is empty! Let’s fill it up shall we?
                   </div>
                   <div className="space-x-4">
-                    <button className="h-14  bg-red-500 rounded-3xl text-center text-xl font-medium text-white border-2 border-gray-300 px-4 hover:text-red-500 hover:bg-white hover:border-red-500 ">
+                    <button className="min-h-14 min-w-1/5 rounded mb-2 border-pink-300 border-4  p-3 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 ">
                       <Link to="/product" style={{ textDecoration: 'none' }}>
-                        Continue shopping
+                        CONTINUE SHOPPING
                       </Link>
                     </button>
-                    <button className="h-14  bg-white rounded-3xl text-center text-xl font-medium text-pink-500 border-2 border-pink-500 px-4 hover:text-white hover:bg-pink-400 hover:border-gray-400 ">
+                    <button className="min-h-14 min-w-1/5 mb-2 rounded bg-pink-500 border-4 border-pink-500 p-3 text-xl font-semibold text-white hover:bg-pink-600 hover:border-pink-600 ">
                       <Link to="/Wishlist" style={{ textDecoration: 'none' }}>
-                        View saved products
+                        VIEW SAVED PRODUCTS
                       </Link>
                     </button>
                   </div>

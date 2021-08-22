@@ -3,7 +3,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { NavLink } from 'react-router-dom';
 import { AsyncIcon, CartIcon, FavIcon } from './icons/navIcon';
 const navigation = [
-  { name: 'Product', current: true },
+  { name: 'Products', current: true },
   { name: 'Categories', current: false },
   { name: 'Orders', current: false },
 ];
