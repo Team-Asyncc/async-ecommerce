@@ -163,10 +163,7 @@ export default function Cart() {
                         order
                       </div>
                       <button className="text-white rounded-lg bg-pink-600 h-10  text-center mt-4 text-xl place-order">
-                        <Link
-                          to="/placeorder"
-                          style={{ textDecoration: 'none' }}
-                        >
+                        <Link to="/address" style={{ textDecoration: 'none' }}>
                           Place your order
                         </Link>
                       </button>
