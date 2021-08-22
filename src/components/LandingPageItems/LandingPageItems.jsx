@@ -6,10 +6,11 @@ function ItemsDisplay() {
       heading: "Women's Clothing",
       items: [
         {
-          description: 'Shirt & Jean',
+          description: 'Casuals',
           imageurl:
-            'https://images.unsplash.com/photo-1614251056216-f748f76cd228?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+            'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
         },
+        
         {
           description: 'Track Suits',
           imageurl:
@@ -29,9 +30,9 @@ function ItemsDisplay() {
         },
 
         {
-          description: 'Casuals',
+          description: 'Shirt & Jean',
           imageurl:
-            'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
+            'https://images.unsplash.com/photo-1614251056216-f748f76cd228?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
         },
       ],
     },

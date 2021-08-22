@@ -1,6 +1,6 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AsyncIcon, CartIcon, FavIcon } from './icons/navIcon';
 const navigation = [
   { name: 'Product', current: true },
@@ -42,9 +42,9 @@ export default function Navbar() {
                 </div>
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
-                    <Link to="/">
+                    <NavLink activeClassName="active-class" to="/">
                       <AsyncIcon className="hidden lg:block" />
-                    </Link>
+                    </NavLink>
                     {/*
                         Logo
                     className= */}
@@ -52,37 +52,37 @@ export default function Navbar() {
                   <div className="hidden lg:flex  sm:flex sm:ml-6">
                     <div className="flex space-x-4 items-center justify-center">
                       {navigation.map((item, idx) => (
-                        <Link to={`/${item.name}`} key={idx}>
+                        <NavLink activeClassName="active-class" className="navbar-link" to={`/${item.name}`} key={idx}>
                           <span
                             key={item.name}
-                            className={classNames(
-                              'text-black font-medium hover:bg-pink-500 hover:text-white',
-                              'px-3 py-2 rounded-md text-lg font-medium'
-                            )}
+                            // className={classNames(
+                            //   'text-black hover:bg-pink-500 hover:text-white',
+                            //   'px-3 py-2 rounded-md text-lg font-bold'
+                            // )}
                             // aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
                           </span>
-                        </Link>
+                        </NavLink>
                       ))}
                     </div>
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
                   {/* Fav Icon */}
-                  <Link
+                  <NavLink activeClassName="text-pink-500"
                     to="/Wishlist"
-                    className=" p-1 rounded-full text-gray-800 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-pink-600 focus:ring-white focus:text-pink-500"
+                    className=" p-1 rounded-full text-gray-600 hover:text-pink-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-offset-pink-500 focus:ring-white focus:text-pink-500"
                   >
                     <FavIcon />
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink activeClassName="text-pink-500"
                     to="/Cart"
-                    className=" p-1 rounded-full text-gray-800 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-pink-600 focus:ring-white focus:text-pink-500"
+                    className=" p-1 rounded-full text-gray-600 hover:text-pink-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-offset-pink-500 focus:ring-white focus:text-pink-500"
                   >
                     {/* Cart Icon */}
                     <CartIcon />
-                  </Link>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function Navbar() {
             <Disclosure.Panel className="sm:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item, idx) => (
-                  <Link to={`/${item.name}`} key={idx}>
+                  <NavLink activeClassName="text-pink-500" to={`/${item.name}`} key={idx}>
                     <span
                       key={item.name}
                       className={classNames(
@@ -101,7 +101,7 @@ export default function Navbar() {
                     >
                       {item.name}
                     </span>
-                  </Link>
+                  </NavLink>
                 ))}
               </div>
             </Disclosure.Panel>
