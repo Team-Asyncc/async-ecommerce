@@ -9,6 +9,7 @@ import './App.scss';
 import ToastContainer from './components/ToastContainer';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import AddressPage from './components/AddressPage/AddressPage';
+import OrderSuccess from './components/AddressPage/OrderSuccess';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/Cart" component={Cart} />
           <Route exact path="/Wishlist" component={Wishlist} />
           <Route exact path="/address" component={AddressPage} />
+          <Route exact path="/ordersuccessful" component={OrderSuccess} />
         </Switch>
       </Router>
     </div>

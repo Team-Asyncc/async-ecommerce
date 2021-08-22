@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AddressCard from './AddressCard';
 import AddressForm from './AddressForm';
-
+import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-modal';
-import { setSelected } from '../../redux/slices/addressSlice';
+import { setAllAddress, setSelected } from '../../redux/slices/addressSlice';
+import { Link } from 'react-router-dom';
+import SelectAddress from './SelectAddress';
+import { loadAddresses } from '../../services/addresses';
 
 const customStyles = {
   content: {
@@ -39,6 +41,9 @@ const AddressPage = () => {
   const cart = useSelector((state) => state.cart);
   const numberOfCartItems = cart.length;
   let totalPrice = 0;
+  useEffect(() => {
+    dispatch(setAllAddress(loadAddresses()));
+  }, [dispatch]);
   cart.forEach((item, idx) => {
     totalPrice += item.price * (item.quantity + 1);
   });
@@ -55,7 +60,7 @@ const AddressPage = () => {
         contentLabel="Example Modal"
       >
         <button onClick={closeModal} className="">
-          close
+          <CloseIcon />
         </button>
         <AddressForm setIsOpen={setIsOpen} />
       </Modal>
@@ -73,16 +78,10 @@ const AddressPage = () => {
               </div>
             ) : (
               <div className="h-5/6 p-3 rounded-lg overflow-y-scroll space-y-2 custom-scroll">
-                {availableAddress.map((storedAddress, idx) => {
-                  return (
-                    <AddressCard
-                      storedAddress={storedAddress}
-                      idx={idx}
-                      key={idx}
-                      openModal={openModal}
-                    />
-                  );
-                })}
+                <SelectAddress
+                  availableAddress={availableAddress}
+                  openModal={openModal}
+                />
               </div>
             )}
             <button
@@ -91,7 +90,7 @@ const AddressPage = () => {
 
                 openModal();
               }}
-              className="ml-3 font-bold  bg-gradient-to-r from-pink-200 to-blue-200 p-2 rounded-md text-md px-5 border-2 border-gray-700 "
+              className="ml-3 font-bold  bg-gradient-to-r from-pink-200 to-blue-200 p-2 rounded-md text-md px-5 border-2 border-gray-700 hover:from-blue-200 hover:to-pink-200 transition-all"
             >
               ADD NEW ADDRESS
             </button>
@@ -122,9 +121,11 @@ const AddressPage = () => {
                 <span className="inline-block">TOTAL AMOUNT:</span>{' '}
                 {(totalPrice - totalPrice / 10).toFixed(2)}₹
               </div>
-              <button className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 ">
-                ADD TO ORDER
-              </button>
+              <Link to="/ordersuccessful">
+                <button className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 ">
+                  ADD TO ORDER
+                </button>
+              </Link>
             </div>
           </div>
         </div>

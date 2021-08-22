@@ -11,7 +11,7 @@ export const addressSlice = createSlice({
   initialState: initialState,
   reducers: {
     setAllAddress: (state, action) => {
-      state.storeAddressses = [...action.payload];
+      return { ...action.payload };
     },
     addAddress: (state, action) => {
       state.storedAddresses = [...state.storedAddresses, action.payload];
