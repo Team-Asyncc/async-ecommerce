@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeAddress, setSelected } from '../../redux/slices/addressSlice';
-
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 const AddressCard = ({ storedAddress, idx, openModal }) => {
   const { name, address1, address2, pincode, state, district, mobileno } =
     storedAddress;
@@ -20,7 +20,10 @@ const AddressCard = ({ storedAddress, idx, openModal }) => {
         {'Mobile: '}
         <span className="font-semibold">{mobileno}</span>
       </div>
-      <div className="text-sm">Pay on Delivery available</div>
+      <div className="text-sm">
+        <FiberManualRecordIcon style={{ fontSize: '0.4rem' }} /> Pay on Delivery
+        available
+      </div>
       <div className="space-x-4">
         <button
           className="px-3 py-1 text-sm font-medium rounded border-2 border-green-200 text-green-400"

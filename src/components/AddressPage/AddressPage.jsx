@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import SelectAddress from './SelectAddress';
 import { loadAddresses } from '../../services/addresses';
 import { addOrder } from '../../redux/slices/orderSlice';
+import { clearCart } from '../../redux/slices/Cartslice';
+import toast from 'react-hot-toast';
 
 const customStyles = {
   content: {
@@ -37,7 +39,8 @@ const AddressPage = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  const availableAddress = useSelector((s) => s.addressData.storedAddresses);
+  const { storedAddresses } = useSelector((s) => s.addressData);
+  console.log('check this', storedAddresses);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const numberOfCartItems = cart.length;
@@ -73,14 +76,14 @@ const AddressPage = () => {
 
         <div className="flex flex-col justify-center p-3 h-5/6 sm:flex-row">
           <div className="w-10/12 h-auto px-4 space-y-6 sm:w-7/12">
-            {availableAddress.length === 0 ? (
+            {storedAddresses.length === 0 ? (
               <div className="h-24 bg-white rounded-lg text-xl font-normal p-6">
                 Nothing here...
               </div>
             ) : (
               <div className="h-5/6 p-3 rounded-lg overflow-y-scroll space-y-2 custom-scroll">
                 <SelectAddress
-                  availableAddress={availableAddress}
+                  availableAddress={storedAddresses}
                   openModal={openModal}
                 />
               </div>
@@ -122,21 +125,36 @@ const AddressPage = () => {
                 <span className="inline-block">TOTAL AMOUNT:</span>{' '}
                 {(totalPrice - totalPrice / 10).toFixed(2)}₹
               </div>
-              <Link to="/ordersuccessful">
+              {storedAddresses.length === 0 ? (
                 <button
-                  className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
                   onClick={() => {
-                    const cartWithDate = cart.map((item) => {
-                      const date = new Date();
-                      const dateData = date.toUTCString().slice(0, 17);
-                      return { ...item, date: dateData };
-                    });
-                    dispatch(addOrder(cartWithDate));
+                    dispatch(setSelected([]));
+
+                    openModal();
                   }}
+                  className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
                 >
-                  ADD TO ORDER
+                  ADD ADDRESS
                 </button>
-              </Link>
+              ) : (
+                <Link to="/ordersuccessful">
+                  <button
+                    className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
+                    onClick={() => {
+                      const cartWithDate = cart.map((item) => {
+                        const date = new Date();
+                        const dateData = date.toUTCString().slice(0, 17);
+                        return { ...item, date: dateData };
+                      });
+                      toast('Order placed successfully', { icon: '🥰' });
+                      dispatch(addOrder(cartWithDate));
+                      dispatch(clearCart());
+                    }}
+                  >
+                    PLACE ORDER
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
