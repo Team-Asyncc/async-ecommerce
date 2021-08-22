@@ -34,7 +34,7 @@
 
 .off-span {
   font-weight: 500;
-  color: salmon;
+  color: rgb(236, 72, 153);
 }
 .saved-product-btn {
   color: rgb(255, 23, 68);
@@ -70,13 +70,13 @@
 }
 .cart-item {
   // width: 40vw;
-  border: 0.3px solid rgb(94, 94, 94);
+  // border: 0.3px solid rgb(94, 94, 94);
   width: 45vw;
   display: flex;
   align-items: center;
   // justify-content: space-around;
   border-radius: 10px;
-  margin: 5px 0;
+  margin: 20px 0;
   background-color: #fafafa;
   padding-top: 4px;
   padding-right: 2%;
@@ -120,7 +120,7 @@
 }
 
 .free-tag {
-  color: rgb(3, 119, 3);
+  color: rgb(204, 25, 115);
   font-weight: 600;
 }
 .delivery-info {

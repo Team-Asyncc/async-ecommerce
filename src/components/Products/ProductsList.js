@@ -28,7 +28,7 @@ const ProductsList = () => {
   if (isLoading) return <Loading />;
   return (
     <section className="h-screen">
-      <div className="w-5/6 mx-auto mt-10">
+      <div className="w-11/12 mx-auto mt-10 flex flex-wrap justify-around">
         {categoryList.map((val, idx) => (
           <span
             key={idx}
@@ -45,7 +45,7 @@ const ProductsList = () => {
           </span>
         ))}
       </div>
-      <div className="mx-auto flex flex-wrap w-5/6">
+      <div className="mx-auto flex flex-wrap w-11/12 justify-center">
         {products
           .filter(
             (item) => category.includes(item.category) || category.length === 0
