@@ -1,8 +1,8 @@
 export const loadAddresses = () => {
   const data = localStorage.getItem('addresses');
-  let storedOrderList = JSON.parse(data);
-  if (!storedOrderList) storedOrderList = [];
-  return storedOrderList;
+  let storedAddress = JSON.parse(data);
+  if (!storedAddress) storedAddress = {};
+  return storedAddress;
 };
 
 export const storeAddressses = (data) => {
