@@ -172,24 +172,25 @@ export default function Cart() {
                 </div>
               </div>
             ) : (
-              <div>
-                <div className="cart-item-container flex justify-around items-around flex-col ">
-                  <img src={bagIcon} alt="EmptyBag" className="h-80 w-auto " />
-                  <div className="text-2xl">
-                    Your bag is empty! Let’s fill it up shall we?
-                  </div>
-                  <div className="space-x-4">
-                    <button className="min-h-14 min-w-1/5 rounded mb-2 border-pink-300 border-4  p-3 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 ">
-                      <Link to="/product" style={{ textDecoration: 'none' }}>
-                        CONTINUE SHOPPING
-                      </Link>
-                    </button>
-                    <button className="min-h-14 min-w-1/5 mb-2 rounded bg-pink-500 border-4 border-pink-500 p-3 text-xl font-semibold text-white hover:bg-pink-600 hover:border-pink-600 ">
-                      <Link to="/Wishlist" style={{ textDecoration: 'none' }}>
-                        VIEW SAVED PRODUCTS
-                      </Link>
-                    </button>
-                  </div>
+              <div
+                className="flex justify-center flex-col items-center space-y-5 
+      w-full h-full pt-12 space-y-1"
+              >
+                <img src={bagIcon} alt="EmptyBag" className="h-80 w-auto " />
+                <div className="text-2xl">
+                  Your bag is empty! Let’s fill it up shall we?
+                </div>
+                <div className="space-x-4">
+                  <button className=" rounded mb-2 border-pink-300 border-4  p-1 px-6 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 ">
+                    <Link to="/product" style={{ textDecoration: 'none' }}>
+                      CONTINUE SHOPPING
+                    </Link>
+                  </button>
+                  <button className=" mb-2 rounded bg-pink-500 border-4 border-pink-500 p-1 px-6 text-xl font-semibold text-white hover:bg-pink-600 hover:border-pink-600 ">
+                    <Link to="/Wishlist" style={{ textDecoration: 'none' }}>
+                      VIEW SAVED PRODUCTS
+                    </Link>
+                  </button>
                 </div>
               </div>
             )}
