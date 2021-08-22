@@ -173,8 +173,12 @@ export default function Cart() {
               </div>
             ) : (
               <div>
-                <div className="cart-item-container flex justify-around items-center w-auto flex-col ">
-                  <img src={bagIcon} alt="EmptyBag" className="inline-block" />
+                <div className="cart-item-container flex justify-around items-around flex-col ">
+                  <img
+                    src={bagIcon}
+                    alt="EmptyBag"
+                    className="empty-bag w-1/5"
+                  />
                   <div className="cart-empty-msg">
                     Your bag is empty! Let’s fill it up shall we?
                   </div>
