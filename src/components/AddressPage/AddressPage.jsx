@@ -126,7 +126,12 @@ const AddressPage = () => {
                 <button
                   className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
                   onClick={() => {
-                    dispatch(addOrder(cart));
+                    const cartWithDate = cart.map((item) => {
+                      const date = new Date();
+                      const dateData = date.toUTCString().slice(0, 17);
+                      return { ...item, date: dateData };
+                    });
+                    dispatch(addOrder(cartWithDate));
                   }}
                 >
                   ADD TO ORDER

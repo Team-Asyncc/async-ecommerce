@@ -18,8 +18,8 @@ const Orderpage = () => {
       {orders.length === 0 ? (
         <EmptyOrder />
       ) : (
-        <div className="flex justify-center pt-3">
-          <div className="h-screen flex flex-col items-center w-4/5 space-y-5 sm:w-3/5">
+        <div className="flex justify-center pt-3 pb-3 min-h-screen">
+          <div className="min-h-screen flex flex-col items-center w-4/5 space-y-5 sm:w-3/5">
             <div className="self-start font-medium text-xl">
               Showing All Order
             </div>
@@ -29,12 +29,13 @@ const Orderpage = () => {
                     return <OrderItem item={item} key={idx} />;
                   })
                 : orders.slice(0, 3).map((item, idx) => {
-                    return <OrderItem item={item} key={idx} />;
+                    return <OrderItem item={item} key={idx} idx={idx} />;
                   })}
             </div>
             {showAllOrders ? null : (
               <button
-                className="w-11/12 h-14 text-xl text-white text-center bg-pink-600 rounded-xl "
+                className="w-11/12  text-xl text-white text-center bg-pink-600 rounded-xl "
+                style={{ padding: '0.3rem 0' }}
                 onClick={() => setShowAllOrders((s) => true)}
               >
                 SHOW MY OLDER ORDERS
