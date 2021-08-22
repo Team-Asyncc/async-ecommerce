@@ -15,7 +15,7 @@ const EmptyWishlist = () => {
         </div>
         <img src={icon} alt="Empty Wishlist" height="500px" width="500px" />
         <Link to="/Product" className="w-8/12">
-          <button className="w-full mt-6 border-pink-300 border-4 p-1 text-2xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500">
+          <button className="w-full mt-6 border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500">
             CONTINUE SHOPPING
           </button>
         </Link>

@@ -13,7 +13,6 @@ const Orderpage = () => {
     // setShowAllOrders(false);
   }, [dispatch]);
   const orders = useSelector((state) => state.orders);
-  console.log(orders);
   return (
     <>
       {orders.length === 0 ? (

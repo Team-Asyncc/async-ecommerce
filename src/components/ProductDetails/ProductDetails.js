@@ -7,8 +7,10 @@ import { Star } from '@material-ui/icons';
 import toast from 'react-hot-toast';
 
 import { addItem } from '../../redux/slices/Cartslice';
+import { addToWhishlist } from '../../redux/slices/whishlistSlice';
 
 const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+const has_sizes = [`kids' wear`, `women clothing`, 'men clothing', 'footware'];
 
 const ProductDetails = () => {
   const [size, setSize] = useState(null);
@@ -25,6 +27,8 @@ const ProductDetails = () => {
   if (!currentProduct) {
     return <Loading />;
   }
+
+  console.log(currentProduct.category);
 
   return (
     <div className="w-4/5 mx-auto mt-11 flex">
@@ -48,22 +52,29 @@ const ProductDetails = () => {
           <span className="text-lg line-through text-gray-500">RS. 999</span>
           <span className="text-lg text-pink-500 ml-3"> (60% OFF) </span>
         </div>
+
         <div className="mt-4 w-4/5">
-          <h1 className="text-xl">SELECT SIZE</h1>
-          <div className="flex mt-4">
-            {sizes.map((val, idx) => (
-              <div
-                className="border mr-2 h-12 w-12 flex justify-center items-center cursor-pointer hover:border-pink-500 font-semibold"
-                onClick={() => setSize(val)}
-                style={{
-                  color: val === size ? 'rgb(231,84,128)' : '#000',
-                  borderRadius: '50%',
-                }}
-              >
-                {val}
+          {has_sizes.includes(currentProduct.category) && (
+            <div>
+              <h1 className="text-xl">SELECT SIZE</h1>
+              <div className="flex mt-4">
+                {sizes.map((val, idx) => (
+                  <div
+                    key={idx}
+                    className="border mr-2 h-12 w-12 flex justify-center items-center cursor-pointer hover:border-pink-500 font-semibold"
+                    onClick={() => setSize(val)}
+                    style={{
+                      color: val === size ? 'rgb(231,84,128)' : '#000',
+                      borderRadius: '50%',
+                    }}
+                  >
+                    {val}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+
           <div className="mt-4">
             <button
               className="bg-pink-500 py-2 px-4 text-lg text-white font-medium rounded mr-2"
@@ -87,7 +98,15 @@ const ProductDetails = () => {
             >
               Add to Bag
             </button>
-            <button className="py-2 px-4 text-md border-2 rounded hover:border-pink-400">
+            <button
+              className="py-2 px-4 text-md border-2 rounded hover:border-pink-400"
+              onClick={() => {
+                dispatch(addToWhishlist(currentProduct));
+                toast.success('Item added to whislist', {
+                  icon: '🚀',
+                });
+              }}
+            >
               Add to Whishlist
             </button>
           </div>
