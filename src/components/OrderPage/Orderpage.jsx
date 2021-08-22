@@ -21,7 +21,7 @@ const Orderpage = () => {
         <div className="flex justify-center pt-3 pb-3 min-h-screen">
           <div className="min-h-screen flex flex-col items-center w-4/5 space-y-5 sm:w-3/5">
             <div className="self-start font-medium text-xl">
-              Showing All Order
+              Showing All Orders
             </div>
             <div className="w-full p-2 bg-gray-200 space-y-2">
               {showAllOrders
@@ -34,7 +34,7 @@ const Orderpage = () => {
             </div>
             {showAllOrders ? null : (
               <button
-                className="w-11/12  text-xl text-white text-center bg-pink-600 rounded-xl "
+                className="w-11/12 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "
                 style={{ padding: '0.3rem 0' }}
                 onClick={() => setShowAllOrders((s) => true)}
               >

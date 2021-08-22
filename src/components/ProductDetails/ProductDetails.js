@@ -77,7 +77,7 @@ const ProductDetails = () => {
 
           <div className="mt-4">
             <button
-              className="bg-pink-500 py-2 px-4 text-lg text-white font-medium rounded mr-2"
+              className="bg-pink-500 py-2 px-4 text-lg text-white font-medium rounded mr-2 hover:bg-pink-600"
               onClick={() => {
                 let have = cartItems.some(
                   (val) => val.id === currentProduct.id
@@ -96,7 +96,7 @@ const ProductDetails = () => {
                 });
               }}
             >
-              Add to Bag
+              Add to Cart
             </button>
             <button
               className="py-2 px-4 text-md border-2 rounded hover:border-pink-400"

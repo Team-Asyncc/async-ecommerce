@@ -29,8 +29,8 @@ const EmptyOrder = () => {
         </div>
       </div>
       <Link to="/Product">
-        <button className="h-14 w-96 bg-white rounded-lg text-center text-2xl font-medium text-pink-400 border-2 border-pink-400 hover:text-white hover:bg-pink-400 hover:border-white ">
-          Start Shopping
+        <button className="h-12 w-80 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500">
+          START SHOPPING
         </button>
       </Link>
     </div>
