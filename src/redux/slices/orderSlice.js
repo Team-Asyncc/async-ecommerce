@@ -9,7 +9,7 @@ export const orderSlice = createSlice({
       return [...action.payload];
     },
     addOrder: (state, action) => {
-      const newState = [...state, action.payload];
+      const newState = [...state, ...action.payload];
       storeOrders(newState);
       return newState;
     },

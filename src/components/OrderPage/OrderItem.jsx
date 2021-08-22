@@ -3,7 +3,7 @@ import React from 'react';
 import DeliveryIcon from '../../images/order-images/deliveredicon.svg';
 import RatingStars from './RatingStars';
 const OrderItem = ({ item }) => {
-  console.log('called for show order');
+  console.log('called for show order', item);
   const days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
   const month = ['Jan', 'Feb', 'Mar', 'Apr', 'Sep', 'Oct', 'Dec'];
   return (

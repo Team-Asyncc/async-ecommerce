@@ -27,7 +27,6 @@ export default function SelectAddress({ availableAddress, openModal }) {
         return (
           <div className="relative space-y-2" key={idx}>
             <GreenRadio
-              key={idx}
               style={{ position: 'absolute', left: '1px', top: '6px' }}
               checked={selectedValue === idx}
               onChange={handleChange}
@@ -38,7 +37,6 @@ export default function SelectAddress({ availableAddress, openModal }) {
             <AddressCard
               storedAddress={storedAddress}
               idx={idx}
-              key={idx}
               openModal={openModal}
             />
           </div>

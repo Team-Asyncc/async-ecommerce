@@ -7,6 +7,7 @@ import { setAllAddress, setSelected } from '../../redux/slices/addressSlice';
 import { Link } from 'react-router-dom';
 import SelectAddress from './SelectAddress';
 import { loadAddresses } from '../../services/addresses';
+import { addOrder } from '../../redux/slices/orderSlice';
 
 const customStyles = {
   content: {
@@ -122,7 +123,12 @@ const AddressPage = () => {
                 {(totalPrice - totalPrice / 10).toFixed(2)}₹
               </div>
               <Link to="/ordersuccessful">
-                <button className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 ">
+                <button
+                  className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
+                  onClick={() => {
+                    dispatch(addOrder(cart));
+                  }}
+                >
                   ADD TO ORDER
                 </button>
               </Link>
