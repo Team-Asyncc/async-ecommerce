@@ -116,7 +116,7 @@ export default function Cart() {
                       );
                     })}
                     <div className="continue-shoppings">
-                      <Link to="/products" style={{ textDecoration: 'none' }}>
+                      <Link to="/Product" style={{ textDecoration: 'none' }}>
                         Continue shopping
                       </Link>
                     </div>
