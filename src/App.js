@@ -8,6 +8,7 @@ import ProductsList from './components/Products/ProductsList';
 import './App.scss';
 import ToastContainer from './components/ToastContainer';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import AddressPage from './components/AddressPage/AddressPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/Orders" component={Orderpage} />
           <Route exact path="/Cart" component={Cart} />
           <Route exact path="/Wishlist" component={Wishlist} />
+          <Route exact path="/address" component={AddressPage} />
         </Switch>
       </Router>
     </div>
