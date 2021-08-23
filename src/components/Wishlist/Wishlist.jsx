@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import WishlistCard from './WishlistCard';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import EmptyWishlist from './EmptyWishlist';
+import { getWishlist } from '../../redux/slices/whishlistSlice';
+import { loadWishlist } from '../../services/wishlist';
 
 const Wishlist = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getWishlist(loadWishlist()));
+  }, [dispatch]);
+
   const wishlist = useSelector((state) => state.wishlist);
+
   return (
     <div>
       {wishlist.length > 0 ? (
