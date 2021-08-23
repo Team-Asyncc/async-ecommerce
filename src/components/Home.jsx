@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { loadProducts } from '../redux/slices/productSlice';
 import ItemsDisplay from './LandingPageItems/LandingPageItems';
 import Footer from './Footer/Footer';
+import Banner from './LandingPageItems/Banner';
 
 // import { getAllProducts, getSpecificProduct } from '../services/products';
 
@@ -16,12 +17,13 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <header className="App-header">
+      {/* <header className="App-header">
         <p className="bg-red-300 p-3 rounded">ECOMMERCE WEBSITE</p>
-      </header>
+      </header> */}
+      <Banner />
       <Categories />
       <ItemsDisplay />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
