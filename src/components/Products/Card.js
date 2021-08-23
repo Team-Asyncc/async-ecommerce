@@ -1,12 +1,13 @@
 import React from 'react';
-import { useState, useDispatch } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../styles/productList.scss';
-import { addItem } from '../../redux/slices/Cartslice';
+import { addToWhishlist } from '../../redux/slices/whishlistSlice';
 
 const Card = ({ val }) => {
   const [visible, setVisible] = useState(false);
-
+  const dispatch = useDispatch();
   return (
     <div className="m-4 relative overflow-hidden hover:shadow-md">
       <Link to={`/Product/${val.id}`}>
@@ -38,13 +39,6 @@ const Card = ({ val }) => {
             <span className="text-sm font-semibold">₹ {val.price}</span>
             <span className="ml-3 text-red-400 text-sm">( 50% OFF )</span>
           </div>
-          <div>
-            <span
-              className={`w-full inline-block border text-center cursor-pointer py-1 font-medium bg-pink-500 text-gray-100 hover:bg-pink-600 `}
-            >
-              ADD TO CART
-            </span>
-          </div>
         </div>
       </Link>
       <div
@@ -56,6 +50,9 @@ const Card = ({ val }) => {
       >
         <span
           className={`w-full inline-block border text-center cursor-pointer py-1 font-normal hover:border-pink-500 hover:text-pink-500`}
+          onClick={() => {
+            dispatch(addToWhishlist(val));
+          }}
         >
           WISHLIST
         </span>

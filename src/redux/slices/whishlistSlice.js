@@ -8,13 +8,13 @@ const whishlistSlice = createSlice({
     addToWhishlist: (state, action) => {
       for (let item of state) {
         if (item.id === action.payload.id) {
-          toast.success('Item already in whishlist', {
+          toast.success('Item already in wishlist', {
             icon: '😶',
           });
           return state;
         }
       }
-      toast.success('Item added to whishlist', {
+      toast.success('Item added to wishlist', {
         icon: '👏',
       });
       return [...state, action.payload];
