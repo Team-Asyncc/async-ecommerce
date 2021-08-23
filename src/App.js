@@ -10,6 +10,7 @@ import ToastContainer from './components/ToastContainer';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import AddressPage from './components/AddressPage/AddressPage';
 import OrderSuccess from './components/AddressPage/OrderSuccess';
+import Aboutus from './components/Aboutus/Aboutus';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <ToastContainer />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/Aboutus" component={Aboutus} />
           <Route exact path="/Product" component={ProductsList} />
           <Route exact path="/Product/:id" component={ProductDetails} />
           <Route exact path="/Orders" component={Orderpage} />

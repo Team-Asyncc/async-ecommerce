@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { AsyncIcon, CartIcon, FavIcon } from './icons/navIcon';
 const navigation = [
   { name: 'Product', current: true },
-  { name: 'Categories', current: false },
+  // { name: 'Categories', current: false },
   { name: 'Orders', current: false },
+  { name: 'Aboutus', current: false },
 ];
 
 function classNames(...classes) {
@@ -58,16 +59,9 @@ export default function Navbar() {
                           to={`/${item.name}`}
                           key={idx}
                         >
-                          <span
-                            key={item.name}
-                            // className={classNames(
-                            //   'text-black hover:bg-pink-500 hover:text-white',
-                            //   'px-3 py-2 rounded-md text-lg font-bold'
-                            // )}
-                            // aria-current={item.current ? 'page' : undefined}
-                          >
-                            {item.name}
-                          </span>
+
+                          <span key={item.name}>{item.name}</span>
+
                         </NavLink>
                       ))}
                     </div>
