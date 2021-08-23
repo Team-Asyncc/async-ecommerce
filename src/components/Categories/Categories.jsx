@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CategoryCard from './CategoryCard';
 
 const Categories = () => {
@@ -44,6 +45,7 @@ const Categories = () => {
           category_type="Home Decor"
         />
       </div>
+     
     </div>
   );
 };

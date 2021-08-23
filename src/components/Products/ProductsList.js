@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/slices/productSlice';
+import Footer from '../Footer/Footer';
 import Loading from '../Loading';
 
 import Card from './Card';
@@ -54,6 +55,7 @@ const ProductsList = () => {
             return <Card val={val} key={idx} />;
           })}
       </div>
+      <Footer/>
     </section>
   );
 };
