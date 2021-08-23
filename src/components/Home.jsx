@@ -3,6 +3,7 @@ import Categories from './Categories/Categories';
 import { useDispatch } from 'react-redux';
 import { loadProducts } from '../redux/slices/productSlice';
 import ItemsDisplay from './LandingPageItems/LandingPageItems';
+import Footer from './Footer/Footer';
 
 // import { getAllProducts, getSpecificProduct } from '../services/products';
 
@@ -20,6 +21,7 @@ const Home = () => {
       </header>
       <Categories />
       <ItemsDisplay />
+      <Footer/>
     </div>
   );
 };
