@@ -52,7 +52,12 @@ export default function Navbar() {
                   <div className="hidden lg:flex  sm:flex sm:ml-6">
                     <div className="flex space-x-4 items-center justify-center">
                       {navigation.map((item, idx) => (
-                        <NavLink activeClassName="active-class" className="navbar-link" to={`/${item.name}`} key={idx}>
+                        <NavLink
+                          activeClassName="active-class"
+                          className="navbar-link"
+                          to={`/${item.name}`}
+                          key={idx}
+                        >
                           <span
                             key={item.name}
                             // className={classNames(
@@ -70,13 +75,15 @@ export default function Navbar() {
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
                   {/* Fav Icon */}
-                  <NavLink activeClassName="text-pink-500"
+                  <NavLink
+                    activeClassName="text-pink-500"
                     to="/Wishlist"
                     className=" p-1 rounded-full text-gray-600 hover:text-pink-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-offset-pink-500 focus:ring-white focus:text-pink-500"
                   >
                     <FavIcon />
                   </NavLink>
-                  <NavLink activeClassName="text-pink-500"
+                  <NavLink
+                    activeClassName="text-pink-500"
                     to="/Cart"
                     className=" p-1 rounded-full text-gray-600 hover:text-pink-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-offset-pink-500 focus:ring-white focus:text-pink-500"
                   >
@@ -90,7 +97,11 @@ export default function Navbar() {
             <Disclosure.Panel className="sm:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item, idx) => (
-                  <NavLink activeClassName="text-pink-500" to={`/${item.name}`} key={idx}>
+                  <NavLink
+                    activeClassName="text-pink-500"
+                    to={`/${item.name}`}
+                    key={idx}
+                  >
                     <span
                       key={item.name}
                       className={classNames(
