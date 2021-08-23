@@ -2,7 +2,7 @@ import deliveryIcon from '../assets/delivery.png';
 import couponIcon from '../assets/coupon.png';
 import bagIcon from '../assets/uempty_cart.svg';
 import { Link } from 'react-router-dom';
-import { removeItem, incItem, decItem } from '../redux/slices/Cartslice';
+import { removeItem, incItem, decItem  } from '../redux/slices/Cartslice';
 import delIcon from '../assets/delete.png';
 import { useDispatch, useSelector } from 'react-redux';
 import './cart.scss';
