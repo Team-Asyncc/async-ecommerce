@@ -31,15 +31,12 @@ const WishlistCard = ({ productObj }) => {
               )}
             </span>
           </div>
-          <span className="text-sm font-semibold">
-            Rs.{'\u00a0'}
-            {productObj.price.toString().length > 4
-              ? productObj.price.toString().slice(0, 4)
-              : productObj.price.toString()}
+          <span className="text-md font-semibold">₹ {productObj.price}</span>
+          <span className="ml-3 text-sm line-through text-gray-500">
+            ₹ 2000
           </span>
-          <span className="ml-3  text-xs line-through">Rs. Original</span>
-          <span className="ml-3 text-red-400 text-xs font-semibold">
-            (40% OFF)
+          <span className="ml-3 text-red-400 text-sm font-semibold">
+            ( 50% OFF )
           </span>
         </div>
       </div>
