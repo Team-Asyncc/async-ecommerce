@@ -8,9 +8,9 @@ import waves from './wave.svg'
 
 const Footer = () => {
   return (
-    <div className="main-footer flex flex-wrap flex-col justify-center ">
+    <div className="main-footer flex flex-wrap flex-col justify-center  w-full">
       <img src={waves} alt="waves" />
-      <div className="container flex flex-wrap bg-pink-300">
+      <div className="container flex flex-wrap bg-pink-300  w-full">
         <div className="flex flex-col  items-start m-5 ">
           <h1 className="pb-2 text-6xl font-bold">
             <span className="text-pink-500">A</span>sync Store
@@ -69,7 +69,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="text-center   bg-pink-300">
+      <div className="text-center   bg-pink-300 w-full">
         Copyright © Team Async. All Rights Reserved
       </div>
     </div>
