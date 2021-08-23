@@ -280,7 +280,7 @@ function ItemsDisplay() {
   return (
     <>
           {itemList.map((category, index) => {
-              return <Items category={category} key={index} />;
+              return <Items category={category} key={index} id={index} />;
       })}
     </>
   );
