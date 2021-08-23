@@ -9,9 +9,9 @@ import waves from './wave.svg'
 const Footer = () => {
   return (
     <div className="main-footer flex flex-wrap flex-col justify-center  w-full">
-      <img src={waves} alt="waves" />
-      <div className="container flex flex-wrap bg-pink-300  w-full">
-        <div className="flex flex-col  items-start m-5 ">
+      <img src={waves} alt="waves" className="w-full"  />
+      <div className="container flex flex-wrap bg-pink-300 min-w-full ">
+        <div className="flex flex-col  items-start mb-5">
           <h1 className="pb-2 text-6xl font-bold">
             <span className="text-pink-500">A</span>sync Store
           </h1>
