@@ -24,13 +24,19 @@ const WishlistCard = ({ productObj }) => {
         <div className="px-3 pb-6 py-4 border relative">
           <div className="leading-3">
             <span className="text-lg font-medium truncate inline-block">
-              {productObj.title}
+              {productObj.title.length > 20 ? (
+                <div>{productObj.title.slice(0, 21)}...</div>
+              ) : (
+                <div>{productObj.title}</div>
+              )}
             </span>
           </div>
-          <span className="text-sm font-semibold">Rs. {productObj.price}</span>
-          <span className="ml-3  text-xs line-through">Rs. Original</span>
-          <span className="ml-3 text-red-400 text-xs font-semibold">
-            (40% OFF)
+          <span className="text-md font-semibold">₹ {productObj.price}</span>
+          <span className="ml-3 text-sm line-through text-gray-500">
+            ₹ 2000
+          </span>
+          <span className="ml-3 text-red-400 text-sm font-semibold">
+            ( 50% OFF )
           </span>
         </div>
       </div>

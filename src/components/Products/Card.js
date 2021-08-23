@@ -36,7 +36,7 @@ const Card = ({ val }) => {
                 )}
               </span>
             </div>
-            <span className="text-sm font-semibold">₹ {val.price}</span>
+            <span className="text-md font-semibold">₹ {val.price}</span>
             <span className="ml-3 text-red-400 text-sm">( 50% OFF )</span>
           </div>
         </div>

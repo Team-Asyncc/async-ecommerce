@@ -33,8 +33,8 @@ const AddressForm = ({ setIsOpen }) => {
         }
   );
   return (
-    <form
-      className="address-form  w-11/12 flex flex-col  px-6 py-10 bg-blue-100 rounded-lg "
+    <form style={ { boxShadow: "0 5px 16px rgba(0,0,0,0.2)" }}
+      className="address-form w-4/12   m-auto flex flex-col  px-6 py-10 bg-transparent shadow rounded  "
       onSubmit={(e) => {
         setIsOpen(false);
         e.preventDefault();
@@ -54,13 +54,14 @@ const AddressForm = ({ setIsOpen }) => {
         dispatch(setSelected([]));
       }}
     >
-      <div className="flex flex-col mb-14">
+      <div className="flex flex-col mb-14 ">
         <input
           type="text"
           required
-          placeholder="NAME"
+          placeholder="Name"
           defaultValue={inputs.name}
-          className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+          
+          className="mb-5 px-4 py-2 w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, name: e.target.value }));
           }}
@@ -69,8 +70,8 @@ const AddressForm = ({ setIsOpen }) => {
           type="tel"
           required
           defaultValue={inputs.mobileno}
-          placeholder="MOBILE NUMBER"
-          className="px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+          placeholder="Mobile Number"
+          className="px-4 py-2  w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, mobileno: e.target.value }));
           }}
@@ -80,8 +81,8 @@ const AddressForm = ({ setIsOpen }) => {
         type="text"
         required
         defaultValue={inputs.address1}
-        placeholder="ADDESS LINE 1"
-        className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+        placeholder="Address Line 1"
+        className="mb-5 px-4 py-2  w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
         onChange={(e) => {
           setInputs((s) => ({ ...s, address1: e.target.value }));
         }}
@@ -90,8 +91,8 @@ const AddressForm = ({ setIsOpen }) => {
         type="text"
         required
         defaultValue={inputs.address2}
-        placeholder="ADRESS LINE 2"
-        className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+        placeholder="Address Line 2"
+        className="mb-5 px-4 py-2  w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
         onChange={(e) => {
           setInputs((s) => ({ ...s, address2: e.target.value }));
         }}
@@ -101,8 +102,8 @@ const AddressForm = ({ setIsOpen }) => {
         type="text"
         required
         defaultValue={inputs.pincode}
-        placeholder="PINCODE"
-        className="mb-5 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+        placeholder="Pincode"
+        className="mb-5 px-4 py-2 w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
         onChange={(e) => {
           setInputs((s) => ({ ...s, pincode: e.target.value }));
         }}
@@ -112,8 +113,8 @@ const AddressForm = ({ setIsOpen }) => {
           type="text"
           required
           defaultValue={inputs.state}
-          placeholder="STATE"
-          className="w-5/12 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+          placeholder="State"
+          className="w-5/12 px-4 py-2   h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, state: e.target.value }));
           }}
@@ -122,8 +123,8 @@ const AddressForm = ({ setIsOpen }) => {
           type="text"
           required
           defaultValue={inputs.district}
-          placeholder="DISTRICT"
-          className="w-5/12 px-4 py-2 rounded-md focus:outline-none focus:shadow-lg focus:bg-pink-50"
+          placeholder="District"
+          className="w-5/12 px-4 py-2  h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, district: e.target.value }));
           }}
@@ -131,7 +132,7 @@ const AddressForm = ({ setIsOpen }) => {
       </div>
       <button
         onClick={() => {}}
-        className="mt-4 border-pink-300 border-4 p-1 tracking-widest text-3xl font-semibold text-pink-500"
+        className=" h-12  mt-6 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "   
       >
         ADD ADDRESS
       </button>

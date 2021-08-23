@@ -59,7 +59,9 @@ export default function Navbar() {
                           to={`/${item.name}`}
                           key={idx}
                         >
+
                           <span key={item.name}>{item.name}</span>
+
                         </NavLink>
                       ))}
                     </div>

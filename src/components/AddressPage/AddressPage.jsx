@@ -11,14 +11,23 @@ import { addOrder } from '../../redux/slices/orderSlice';
 import { clearCart } from '../../redux/slices/Cartslice';
 import toast from 'react-hot-toast';
 
+
 const customStyles = {
   content: {
-    top: '50%',
+    top: '55%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    padding: "20px ",
+    border:"none",
+    width: "100vw",
+    // backgroundColor: "rgba(0,0,0,0.3)",
+    background : 'linear-gradient(282.39deg , #e3f3ff 9.07% , #f7e7ef 81% )',
+    
+    
+    
   },
 };
 
@@ -53,7 +62,7 @@ const AddressPage = () => {
   });
   return (
     <div
-      className="flex  justify-center w-full"
+      className="flex  justify-center w-full "
       style={{ height: 'calc(100vh - 64px)' }}
     >
       <Modal
@@ -63,10 +72,10 @@ const AddressPage = () => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={closeModal} className="">
+        <button onClick={closeModal} className="absolute ml-2 mt-2">
           <CloseIcon />
         </button>
-        <AddressForm setIsOpen={setIsOpen} />
+        <AddressForm setIsOpen={setIsOpen}/>
       </Modal>
 
       <div className=" w-10/12">

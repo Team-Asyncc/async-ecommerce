@@ -106,9 +106,6 @@ const ProductDetails = () => {
               className="py-2 px-4 text-md  border-2 rounded mb-3 hover:shadow-sm hover:border-pink-500 hover:text-pink-500"
               onClick={() => {
                 dispatch(addToWhishlist(currentProduct));
-                toast.success('Item added to whislist', {
-                  icon: '🚀',
-                });
               }}
             >
               ADD TO WISHLIST
