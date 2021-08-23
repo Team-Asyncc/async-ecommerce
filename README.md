@@ -1,14 +1,16 @@
 
-# Async Ecommerce
+# Async Store ![shop](https://user-images.githubusercontent.com/56041735/130449377-cec2730f-cec6-480e-b775-a6bd2e07066b.png)
 
 
-## Deployment
+
+## 
 
 - [Shop Now](https://asyncstore.netlify.app/)
-- [Demo](https://drive.google.com/file/d/1lYAugx5O5nU4NNauUdPgF8WidiEXUQoX/view)
+- [Demo](https://drive.google.com/file/d/1zP8nYBfEcFiyl37Is-a_EL7TYttcOYjh/view?usp=sharing)
 
 
 ## Screenshot
+
 ![Web capture_23-8-2021_175523_asyncstore netlify app](https://user-images.githubusercontent.com/56041735/130447281-2f9c2025-040e-41bd-aecc-367bae2aa0f4.jpeg)
 ![Web capture_23-8-2021_175747_asyncstore netlify app](https://user-images.githubusercontent.com/56041735/130447623-a8e270e3-dad4-47ea-9955-9b93ca7f0a1f.jpeg)
 ![Web capture_23-8-2021_175825_asyncstore netlify app](https://user-images.githubusercontent.com/56041735/130447360-c56f5aed-51f3-4acb-9a59-c8507be96a30.jpeg)
