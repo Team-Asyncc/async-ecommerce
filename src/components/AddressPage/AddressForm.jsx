@@ -38,6 +38,20 @@ const AddressForm = ({ setIsOpen }) => {
       onSubmit={(e) => {
         setIsOpen(false);
         e.preventDefault();
+        const data = {
+          name: inputs.name,
+          mobileno: inputs.mobileno,
+          address1: inputs.address1,
+          address2: inputs.address2,
+          pincode: inputs.pincode,
+          district: inputs.district,
+          state: inputs.state,
+        };
+        selectedAddress.length !== 0
+          ? dispatch(updateAddress({ id: selectedAddress.id, val: data }))
+          : dispatch(addAddress(data));
+        // setIsOpen(false);
+        dispatch(setSelected([]));
       }}
     >
       <div className="flex flex-col mb-14 ">
@@ -117,24 +131,8 @@ const AddressForm = ({ setIsOpen }) => {
         />
       </div>
       <button
-        onClick={() => {
-          const data = {
-            name: inputs.name,
-            mobileno: inputs.mobileno,
-            address1: inputs.address1,
-            address2: inputs.address2,
-            pincode: inputs.pincode,
-            district: inputs.district,
-            state: inputs.state,
-          };
-          selectedAddress.length !== 0
-            ? dispatch(updateAddress({ id: selectedAddress.id, val: data }))
-            : dispatch(addAddress(data));
-          // setIsOpen(false);
-          dispatch(setSelected([]));
-        }}
-        
-        className=" h-12  mt-6 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "
+        onClick={() => {}}
+        className=" h-12  mt-6 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "   
       >
         ADD ADDRESS
       </button>

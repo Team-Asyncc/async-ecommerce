@@ -42,7 +42,7 @@ export default function Cart() {
                                 {item.title}
                               </div>
                               <img
-                                className="del-icon"
+                                className="del-icon cursor-pointer"
                                 src={delIcon}
                                 alt="del-Icon"
                                 onClick={() => {
@@ -115,11 +115,15 @@ export default function Cart() {
                         </div>
                       );
                     })}
-                    <div className="continue-shoppings">
-                      <Link to="/Product" style={{ textDecoration: 'none' }}>
-                        Continue shopping
-                      </Link>
-                    </div>
+                    <Link
+                      to="/Product"
+                      style={{ textDecoration: 'none' }}
+                      className="flex justify-center"
+                    >
+                      <button className="w-1/2 mt-6 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500">
+                        CONTINUE SHOPPING
+                      </button>
+                    </Link>
                   </section>
                   <section className="cart-info">
                     <div className="coupon-container rounded-lg">
@@ -162,9 +166,9 @@ export default function Cart() {
                         You will save {(totalPrice / 10).toFixed(2)}₹ on this
                         order
                       </div>
-                      <button className="text-white rounded-lg bg-pink-600 h-10  text-center mt-4 text-xl place-order">
+                      <button className=" w-11/12 mt-6 rounded p-1 text-2xl font-semibold bg-pink-500 text-gray-100 hover:bg-pink-600 hover:shadow-md">
                         <Link to="/address" style={{ textDecoration: 'none' }}>
-                          Place your order
+                          PLACE YOUR ORDER
                         </Link>
                       </button>
                     </div>
@@ -179,16 +183,17 @@ export default function Cart() {
                     Your bag is empty! Let’s fill it up shall we?
                   </div>
                   <div className="space-x-4">
-                    <button className="min-h-14 min-w-1/5 rounded mb-2 border-pink-300 border-4  p-3 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 ">
-                      <Link to="/product" style={{ textDecoration: 'none' }}>
+                    <Link to="/product" style={{ textDecoration: 'none' }}>
+                      <button className="min-h-14 min-w-1/5 rounded mb-2 border-pink-300 border-4  p-3 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 ">
                         CONTINUE SHOPPING
-                      </Link>
-                    </button>
-                    <button className="min-h-14 min-w-1/5 mb-2 rounded bg-pink-500 border-4 border-pink-500 p-3 text-xl font-semibold text-white hover:bg-pink-600 hover:border-pink-600 ">
-                      <Link to="/Wishlist" style={{ textDecoration: 'none' }}>
-                        VIEW SAVED PRODUCTS
-                      </Link>
-                    </button>
+                      </button>
+                    </Link>
+
+                    <Link to="/Wishlist" style={{ textDecoration: 'none' }}>
+                      <button className="min-h-14 min-w-1/5 mb-2 rounded bg-pink-500 border-4 border-pink-500 p-3 text-xl font-semibold text-white hover:bg-pink-600 hover:border-pink-600 ">
+                        VIEW WISHLIST
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

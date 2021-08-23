@@ -41,16 +41,16 @@ const ProductDetails = () => {
           <p className="font-normal text-gray-500">
             {currentProduct.description}
           </p>
-          <span className="border px-3 py-1 mt-4 inline-block">
+          <span className="border px-3 py-1 mt-4 inline-flex items-center">
             <span className="text-lg mr-2">{currentProduct.rating}</span>
             <Star className="text-pink-500 text-lg mr-2" />
             <span className="border-l-2 pl-2 text-gray-500">520 ratings</span>
           </span>
         </div>
         <div className="w-4/5 mt-4 flex">
-          <h1 className="text-xl mr-3">Rs. {2 * currentProduct.price}</h1>
+          <h1 className="text-xl mr-3">₹ {currentProduct.price}</h1>
           <span className="text-lg line-through text-gray-500">
-            RS.{currentProduct.price}{' '}
+            ₹{2 * currentProduct.price}{' '}
           </span>
           <span className="text-lg text-pink-500 ml-3"> (50% OFF) </span>
         </div>
@@ -66,7 +66,9 @@ const ProductDetails = () => {
                     className="border mr-2 h-12 w-12 flex justify-center items-center cursor-pointer hover:border-pink-500 font-semibold"
                     onClick={() => setSize(val)}
                     style={{
-                      color: val === size ? 'rgb(231,84,128)' : '#000',
+                      color: val === size ? 'white' : '#000',
+                      backgroundColor:
+                        val === size ? 'rgb(236, 72, 153)' : 'transparent',
                       borderRadius: '50%',
                     }}
                   >
@@ -79,7 +81,7 @@ const ProductDetails = () => {
 
           <div className="mt-4">
             <button
-              className="bg-pink-500 py-2 px-4 text-lg text-white font-medium rounded mr-2 hover:bg-pink-600"
+              className="bg-pink-500 py-2 px-4 text-lg text-gray-100 font-normal rounded mr-2 hover:bg-pink-600 hover:shadow-sm mb-3"
               onClick={() => {
                 let have = cartItems.some(
                   (val) => val.id === currentProduct.id
@@ -98,10 +100,10 @@ const ProductDetails = () => {
                 });
               }}
             >
-              Add to Cart
+              ADD TO CART
             </button>
             <button
-              className="py-2 px-4 text-md border-2 rounded hover:border-pink-400"
+              className="py-2 px-4 text-md  border-2 rounded mb-3 hover:shadow-sm hover:border-pink-500 hover:text-pink-500"
               onClick={() => {
                 dispatch(addToWhishlist(currentProduct));
                 toast.success('Item added to whislist', {
@@ -109,7 +111,7 @@ const ProductDetails = () => {
                 });
               }}
             >
-              Add to Whishlist
+              ADD TO WISHLIST
             </button>
           </div>
         </div>

@@ -5,10 +5,8 @@ import emptyOrder from '../../images/order-images/emptyOrder.svg';
 const EmptyOrder = () => {
   return (
     <div
-      className="flex justify-center flex-col items-center space-y-5 "
-      style={{
-        height: 'calc(100vh - 64px)',
-      }}
+      className="flex justify-center flex-col items-center space-y-5 
+      w-full h-full pt-12 space-y-1"
     >
       <img
         src={emptyOrder}
