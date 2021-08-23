@@ -21,6 +21,11 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     padding: "20px ",
+    border:"none",
+    width: "100vw",
+    // backgroundColor: "rgba(0,0,0,0.3)",
+    background : 'linear-gradient(282.39deg , #e3f3ff 9.07% , #f7e7ef 81% )',
+    
     
     
   },
@@ -67,7 +72,7 @@ const AddressPage = () => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={closeModal} className="absolute ml-5">
+        <button onClick={closeModal} className="absolute ml-2 mt-2">
           <CloseIcon />
         </button>
         <AddressForm setIsOpen={setIsOpen}/>

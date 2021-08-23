@@ -33,8 +33,8 @@ const AddressForm = ({ setIsOpen }) => {
         }
   );
   return (
-    <form
-      className="address-form w-11/12  m-auto flex flex-col  px-6 py-10 bg-red-100 shadow-xl rounded "
+    <form style={ { boxShadow: "0 5px 16px rgba(0,0,0,0.2)" }}
+      className="address-form w-4/12   m-auto flex flex-col  px-6 py-10 bg-transparent shadow rounded  "
       onSubmit={(e) => {
         setIsOpen(false);
         e.preventDefault();
@@ -47,7 +47,7 @@ const AddressForm = ({ setIsOpen }) => {
           placeholder="Name"
           defaultValue={inputs.name}
           
-          className="mb-5 px-4 py-2  w-full h-12 focus:outline-none rounded shadow-md bg-white"
+          className="mb-5 px-4 py-2 w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, name: e.target.value }));
           }}
@@ -57,7 +57,7 @@ const AddressForm = ({ setIsOpen }) => {
           required
           defaultValue={inputs.mobileno}
           placeholder="Mobile Number"
-          className="px-4 py-2 w-full h-12 focus:outline-none rounded shadow-md bg-white"
+          className="px-4 py-2  w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, mobileno: e.target.value }));
           }}
@@ -68,7 +68,7 @@ const AddressForm = ({ setIsOpen }) => {
         required
         defaultValue={inputs.address1}
         placeholder="Address Line 1"
-        className="mb-5 px-4 py-2 w-full h-12 focus:outline-none rounded shadow-md bg-white"
+        className="mb-5 px-4 py-2  w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
         onChange={(e) => {
           setInputs((s) => ({ ...s, address1: e.target.value }));
         }}
@@ -78,7 +78,7 @@ const AddressForm = ({ setIsOpen }) => {
         required
         defaultValue={inputs.address2}
         placeholder="Address Line 2"
-        className="mb-5 px-4 py-2 w-full h-12 focus:outline-none rounded shadow-md bg-white"
+        className="mb-5 px-4 py-2  w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
         onChange={(e) => {
           setInputs((s) => ({ ...s, address2: e.target.value }));
         }}
@@ -89,7 +89,7 @@ const AddressForm = ({ setIsOpen }) => {
         required
         defaultValue={inputs.pincode}
         placeholder="Pincode"
-        className="mb-5 px-4 py-2 w-full h-12 focus:outline-none rounded shadow-md bg-white"
+        className="mb-5 px-4 py-2 w-full h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
         onChange={(e) => {
           setInputs((s) => ({ ...s, pincode: e.target.value }));
         }}
@@ -100,7 +100,7 @@ const AddressForm = ({ setIsOpen }) => {
           required
           defaultValue={inputs.state}
           placeholder="State"
-          className="w-5/12 px-4 py-2  h-12 focus:outline-none rounded shadow-md bg-white"
+          className="w-5/12 px-4 py-2   h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, state: e.target.value }));
           }}
@@ -110,7 +110,7 @@ const AddressForm = ({ setIsOpen }) => {
           required
           defaultValue={inputs.district}
           placeholder="District"
-          className="w-5/12 px-4 py-2 h-12 focus:outline-none rounded shadow-md bg-white"
+          className="w-5/12 px-4 py-2  h-12 bg-white text-pink-500 outline-none text-xl rounded shadow"
           onChange={(e) => {
             setInputs((s) => ({ ...s, district: e.target.value }));
           }}
@@ -134,9 +134,9 @@ const AddressForm = ({ setIsOpen }) => {
           dispatch(setSelected([]));
         }}
         
-        className="mt-4 h-12 bg-pink-400 hover:bg-pink-600 text-white font-bold py-2 px-4  rounded"
+        className=" h-12  mt-6 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500 "
       >
-        Add Address
+        ADD ADDRESS
       </button>
     </form>
   );
