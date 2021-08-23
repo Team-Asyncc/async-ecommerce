@@ -4,16 +4,17 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import waves from './wave.svg'
 
 const Footer = () => {
   return (
-    <div className="main-footer mt-10 mb-1 flex flex-wrap flex-col justify-center">
-      <div className="container flex flex-wrap">
-        <div className="flex flex-col  items-start m-5 ">
-          <h1 className="pb-2 text-4xl font-bold">
+    <div className="main-footer flex flex-wrap flex-col justify-center  w-full">
+      <img src={waves} alt="waves" className="w-full"  />
+      <div className="container flex flex-wrap bg-pink-300 min-w-full ">
+        <div className="flex flex-col  items-start mb-5">
+          <h1 className="pb-2 text-6xl font-bold">
             <span className="text-pink-500">A</span>sync Store
           </h1>
-          {/* <img src="./Async.svg" alt="title" /> */}
           <input
             className="py-1 p-2 text-sm bg-white rounded shadow-lg border border-gray-300  mb-3 w-full text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent "
             type="email"
@@ -68,7 +69,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="text-center mt-6 mb-0">
+      <div className="text-center   bg-pink-300 w-full">
         Copyright © Team Async. All Rights Reserved
       </div>
     </div>
