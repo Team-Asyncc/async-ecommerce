@@ -1,7 +1,7 @@
 # Async Store
 
 <p align="center" >
-  <img src="./src/assets/shop.svg" height="100px" width="100px" />
+  <img src="./src/assets/shop.svg" height="200px" width="200px" />
 </p>
 <div align="center">
 
