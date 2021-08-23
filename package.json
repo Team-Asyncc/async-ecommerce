@@ -37,7 +37,7 @@
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css"
   },
   "eslintConfig": {
-    "extends": [
+    "extends": [ 
       "react-app",
       "react-app/jest"
     ]

@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../services/api';
 import myLog from './myLog';
 
 const axios = Axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_BASE_URL,   
   headers: {
     'Content-Type': 'application/vnd.api+json',
   },
