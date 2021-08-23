@@ -88,16 +88,18 @@ const AddressPage = () => {
                 />
               </div>
             )}
-            <button
-              onClick={() => {
-                dispatch(setSelected([]));
+            <div className="w-full flex justify-center">
+              <button
+                onClick={() => {
+                  dispatch(setSelected([]));
 
-                openModal();
-              }}
-              className="ml-3 font-bold  bg-gradient-to-r from-pink-200 to-blue-200 p-2 rounded-md text-md px-5 border-2 border-gray-700 hover:from-blue-200 hover:to-pink-200 transition-all"
-            >
-              ADD NEW ADDRESS
-            </button>
+                  openModal();
+                }}
+                className="w-2/5 mt-6 rounded border-pink-300 border-4 p-1 text-xl font-semibold text-pink-500 hover:text-gray-100 hover:bg-pink-500 hover:border-pink-500"
+              >
+                ADD NEW ADDRESS
+              </button>
+            </div>
           </div>
           <div className="space-y-3 p-2">
             <div className="bg-white  px-6 py-3 w-96 text-base rounded-lg flex flex-col gap-2">
@@ -110,7 +112,7 @@ const AddressPage = () => {
               </div>
               <div className="font-normal  flex justify-between ">
                 <span className="inline-block"> DISCOUNT ON MRP:</span>
-                <span className="text-green-400">
+                <span className="text-pink-500">
                   -₹ {(totalPrice / 10).toFixed(2)}
                 </span>
               </div>
@@ -119,7 +121,7 @@ const AddressPage = () => {
               </div>
               <div className="font-normal  flex justify-between ">
                 <span className="inline-block">Convenience Fee:</span>{' '}
-                <span className="text-green-400">FREE</span>
+                <span className="text-pink-500">FREE</span>
               </div>
               <div className="font-medium  flex justify-between border-t-2 border-gray-400 pt-5">
                 <span className="inline-block">TOTAL AMOUNT:</span>{' '}
@@ -132,14 +134,14 @@ const AddressPage = () => {
 
                     openModal();
                   }}
-                  className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
+                  className="w-full mt-6 rounded p-1 text-2xl font-semibold bg-pink-500 text-gray-100 hover:bg-pink-600 hover:shadow-md"
                 >
                   ADD ADDRESS
                 </button>
               ) : (
-                <Link to="/ordersuccessful">
+                <Link to="/ordersuccessful" className="flex justify-center">
                   <button
-                    className="w-full text-pink-600 bg-white rounded p-3 border-pink-500 border-2 "
+                    className="w-11/12 mt-6 mb-4 rounded p-1 text-2xl font-semibold bg-pink-500 text-gray-100 hover:bg-pink-600 hover:shadow-md"
                     onClick={() => {
                       const cartWithDate = cart.map((item) => {
                         const date = new Date();
