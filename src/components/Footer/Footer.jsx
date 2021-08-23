@@ -8,7 +8,7 @@ import waves from './wave.svg'
 
 const Footer = () => {
   return (
-    <div className="main-footer flex flex-wrap flex-col justify-center  w-full">
+    <div className="mt-8 main-footer flex flex-wrap flex-col justify-center  w-full">
       <img src={waves} alt="waves" className="w-full"  />
       <div className="container flex flex-wrap bg-pink-300 min-w-full ">
         <div className="flex flex-col  items-start mb-5">
