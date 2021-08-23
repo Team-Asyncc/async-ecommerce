@@ -6,7 +6,6 @@ export const loadWishlist = () => {
 };
 
 export const storeWishlist = (data) => {
-  console.log('called to store wishlist locally');
   const storeData = JSON.stringify(data);
   localStorage.setItem('wishlist', storeData);
 };
