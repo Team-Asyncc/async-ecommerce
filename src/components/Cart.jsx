@@ -2,7 +2,7 @@ import deliveryIcon from '../assets/delivery.png';
 import couponIcon from '../assets/coupon.png';
 import bagIcon from '../assets/uempty_cart.svg';
 import { Link } from 'react-router-dom';
-import { removeItem, incItem, decItem  } from '../redux/slices/Cartslice';
+import { removeItem, incItem, decItem } from '../redux/slices/Cartslice';
 import delIcon from '../assets/delete.png';
 import { useDispatch, useSelector } from 'react-redux';
 import './cart.scss';
@@ -17,11 +17,6 @@ export default function Cart() {
           <div>
             {selectedItem.length > 0 ? (
               <div>
-                <div className="off-info">
-                  Apply coupon <span className="off-highlight">DEVSNEST10</span>{' '}
-                  to avail flat <span className="off-highlight">10%</span> off
-                  on your first order{' '}
-                </div>
                 <div className="devider">
                   <section className="cart-item-field">
                     {selectedItem.map((item, idx) => {
@@ -126,6 +121,12 @@ export default function Cart() {
                     </Link>
                   </section>
                   <section className="cart-info">
+                    <div className="off-info">
+                      Apply coupon{' '}
+                      <span className="off-highlight">DEVSNEST10</span> to avail
+                      flat <span className="off-highlight">10%</span> off on
+                      your first order{' '}
+                    </div>
                     <div className="coupon-container rounded-lg">
                       <img
                         src={couponIcon}
